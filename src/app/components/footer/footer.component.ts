@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { LanguageService } from '../../../services/language/language.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -21,6 +21,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
 export class FooterComponent implements OnInit {
   lang:string ='';
+  isMobile: boolean = false;
+
 
   
   constructor(
@@ -37,12 +39,21 @@ export class FooterComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.checkScreenSize(); // Check screen size on component load
+
     this._LanguageService.getlanguage().subscribe({
       next:(lang)=>{
         this.lang=lang;
       }
     })
 
+  }
+  @HostListener('window:resize', [])
+  onResize() {
+    this.checkScreenSize();
+  }
+  checkScreenSize() {
+    this.isMobile = window.innerWidth <= 768; // Define mobile breakpoint
   }
   
 }
