@@ -1,158 +1,317 @@
 <!-- <p>footer-en works!</p> -->
-<footer class="footer bg-light py-4">
+<footer class="footer bg-light py-4 d-none d-sm-block">
   <div [dir]="lang == 'en' ? 'ltr' : 'rtl'" class="container">
     <div class="row">
       <!-- Shop and Learn -->
-      <div class="col-sm-6 col-md-3 reduced-spacing" >
+      <div class="col-sm-6 col-md-3 reduced-spacing">
         <h6>{{ "footer.text1" | translate }}</h6>
         <ul class="list-unstyled">
-          <li><a class="bb" href="#">{{ "footer.mobile" | translate }}</a></li>
-          <li><a href="#">{{ "footer.phone" | translate }}</a></li>
-          <li><a href="#">{{ "footer.acc" | translate }}</a></li>
-          <li><a class="bb" href="#">{{ "footer.lap" | translate }}</a></li>
-          <li><a href="#">{{ "footer.home" | translate }}</a></li>
-          <li><a href="#">{{ "footer.work" | translate }}</a></li>
-          <li><a href="#">{{ "footer.creators" | translate }}</a></li>
-          <li><a href="#">{{ "footer.students" | translate }}</a></li>
-          <li><a href="#">{{ "footer.gaming" | translate }}</a></li>
-          <li><a href="#">{{ "footer.acc" | translate }}</a></li>
-          <li><a class="bb" href="#">{{ "footer.Displays" | translate }}</a></li>
-          <li><a href="#">{{ 'footer.monitors' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.projectors' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.allInOnePCs' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.towerPCs' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.gamingTowerPCs' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.nucs' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.miniPCs' | translate }}</a></li>
+          <li>
+            <a class="bb" href="#">{{ "footer.mobile" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.phone" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.acc" | translate }}</a>
+          </li>
+          <li>
+            <a class="bb" href="#">{{ "footer.lap" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.home" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.work" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.creators" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.students" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.gaming" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.acc" | translate }}</a>
+          </li>
+          <li>
+            <a class="bb" href="#">{{ "footer.Displays" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.monitors" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.projectors" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.allInOnePCs" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.towerPCs" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.gamingTowerPCs" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.nucs" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.miniPCs" | translate }}</a>
+          </li>
         </ul>
       </div>
-    
+
       <!-- Column 2 -->
-      <div class="col-sm-6 col-md-3 reduced-spacing" >
+      <div class="col-sm-6 col-md-3 reduced-spacing">
         <ul class="list-unstyled">
-          <li><a href="#">{{ 'footer.workstations' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.accessories' | translate }}</a></li>
-          <li><a href="#" class="bb">{{ 'footer.motherboardsComponents' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.motherboards' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.graphicsCards' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.cases' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.cooling' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.powerSupplyUnits' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.soundCards' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.opticalDrives' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.dataStorage' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.externalGraphicsDocks' | translate }}</a></li>
-          <li><a href="#" class="bb">{{ 'footer.networkingIoTServers' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.wifi7' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.wifi6' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.wifiRouters' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.wholeHomeMeshWiFiSystem' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.businessNetworkSolutions' | translate }}</a></li>
+          <li>
+            <a href="#">{{ "footer.workstations" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.accessories" | translate }}</a>
+          </li>
+          <li>
+            <a href="#" class="bb">{{
+              "footer.motherboardsComponents" | translate
+            }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.motherboards" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.graphicsCards" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.cases" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.cooling" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.powerSupplyUnits" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.soundCards" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.opticalDrives" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.dataStorage" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.externalGraphicsDocks" | translate }}</a>
+          </li>
+          <li>
+            <a href="#" class="bb">{{
+              "footer.networkingIoTServers" | translate
+            }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.wifi7" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.wifi6" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.wifiRouters" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.wholeHomeMeshWiFiSystem" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.businessNetworkSolutions" | translate }}</a>
+          </li>
         </ul>
       </div>
-    
+
       <!-- Column 3 -->
-      <div class="col-sm-6 col-md-3 reduced-spacing" >
+      <div class="col-sm-6 col-md-3 reduced-spacing">
         <ul class="list-unstyled">
-          <li><a href="#">{{ 'footer.Wired Networking' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Intelligent Robots' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.AIoT & Industrial Solutions' | translate }}</a></li>
-          <li><a href="#">{{ 'footerServers' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Smart Home' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Accessories' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Keyboards' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Mice and Mouse Pads' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Headsets and Audio' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Streaming Kits' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Apparel Bags and Gear' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Cases and Protection' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Adapters and Chargers' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Docks Dongles and Cable' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Power Banks' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Controller' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.Gimbal' | translate }}</a></li>
+          <li>
+            <a href="#">{{ "footer.Wired Networking" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Intelligent Robots" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{
+              "footer.AIoT & Industrial Solutions" | translate
+            }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footerServers" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Smart Home" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Accessories" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Keyboards" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Mice and Mouse Pads" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Headsets and Audio" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Streaming Kits" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Apparel Bags and Gear" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Cases and Protection" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Adapters and Chargers" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Docks Dongles and Cable" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Power Banks" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Controller" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.Gimbal" | translate }}</a>
+          </li>
         </ul>
       </div>
-    
+
       <!-- About Us -->
-      <div class="col-sm-6 col-md-3 reduced-spacing" >
+      <div class="col-sm-6 col-md-3 reduced-spacing">
         <h6>{{ "aboutUs.heading" | translate }}</h6>
         <ul class="list-unstyled">
-          <li><a href="#">{{ "aboutUs.aboutAsus" | translate }}</a></li>
-          <li><a href="#">{{ "aboutUs.news" | translate }}</a></li>
-          <li><a href="#">{{ "aboutUs.investorRelations" | translate }}</a></li>
-          <li><a href="#">{{ "aboutUs.pressRoom" | translate }}</a></li>
-          <li><a href="#">{{ "aboutUs.asustor" | translate }}</a></li>
-          <li><a href="#">{{ "aboutUs.asusCloud" | translate }}</a></li>
-          <li><a href="#">{{ "aboutUs.unimax" | translate }}</a></li>
-          <li><a href="#" class="bb">{{ 'footer.learnMore' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.aiPc' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.advancedAiPcs' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.asusDesignCenter' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.asuspro' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.automotiveSolutions' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.avcLicensingNotice' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.asusBlog' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.armouryCrate' | translate }}</a></li>
-          <li><a href="#">{{ 'footer.aura' | translate }}</a></li>
+          <li>
+            <a href="#">{{ "aboutUs.aboutAsus" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "aboutUs.news" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "aboutUs.investorRelations" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "aboutUs.pressRoom" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "aboutUs.asustor" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "aboutUs.asusCloud" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "aboutUs.unimax" | translate }}</a>
+          </li>
+          <li>
+            <a href="#" class="bb">{{ "footer.learnMore" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.aiPc" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.advancedAiPcs" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.asusDesignCenter" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.asuspro" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.automotiveSolutions" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.avcLicensingNotice" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.asusBlog" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.armouryCrate" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "footer.aura" | translate }}</a>
+          </li>
         </ul>
       </div>
-    
+
       <!-- Support -->
-      <div class="col-sm-6 col-md-3 reduced-spacing" >
+      <div class="col-sm-6 col-md-3 reduced-spacing">
         <h6>{{ "support.heading" | translate }}</h6>
         <ul class="list-unstyled">
-          <li><a href="#">{{ "support.repairStatus" | translate }}</a></li>
-          <li><a href="#">{{ "support.serviceLocations" | translate }}</a></li>
-          <li><a href="#">{{ "support.productRegistration" | translate }}</a></li>
-          <li><a href="#">{{ "support.emailUs" | translate }}</a></li>
-          <li><a href="#">{{ "support.callUs" | translate }}</a></li>
-          <li><a href="#">{{ "support.securityAdvisory" | translate }}</a></li>
-          <li><a href="#">{{ "support.supportVideos" | translate }}</a></li>
+          <li>
+            <a href="#">{{ "support.repairStatus" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "support.serviceLocations" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "support.productRegistration" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "support.emailUs" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "support.callUs" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "support.securityAdvisory" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "support.supportVideos" | translate }}</a>
+          </li>
         </ul>
       </div>
-    
+
       <!-- Sustainability -->
-      <div class="col-sm-6 col-md-3 reduced-spacing" >
+      <div class="col-sm-6 col-md-3 reduced-spacing">
         <h6>{{ "sustainability.heading" | translate }}</h6>
         <ul class="list-unstyled">
-          <li><a href="#">{{ "sustainability.esg" | translate }}</a></li>
-          <li><a href="#">{{ "sustainability.environment" | translate }}</a></li>
+          <li>
+            <a href="#">{{ "sustainability.esg" | translate }}</a>
+          </li>
+          <li>
+            <a href="#">{{ "sustainability.environment" | translate }}</a>
+          </li>
         </ul>
       </div>
     </div>
-    
-  
-      <!-- Social Icons -->
-      <div class="row mt-4">
-        <div class="col text-center">
-          <a href="#" class="mx-2"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="mx-2"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="mx-2"><i class="fab fa-youtube"></i></a>
-          <a href="#" class="mx-2"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="mx-2"><i class="fab fa-pinterest"></i></a>
-          <a href="#" class="mx-2"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
 
-
-      
-  
-      <!-- Bottom Text -->
-      <div class="row mt-4">
-        <div class="social-icons">
-          <div class="icoo"> 
-        <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-twitter-x"></i></a>
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-youtube"></i></a>
-        <a href="#"><i class="bi bi-linkedin"></i></a>
-        <a href="#"><i class="bi bi-pinterest"></i></a>
-        <a href="#"><i class="bi bi-discord"></i></a>
-        </div>
-    </div>
+    <!-- Social Icons -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <a href="#" class="mx-2"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="mx-2"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="mx-2"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="mx-2"><i class="fab fa-pinterest"></i></a>
+        <a href="#" class="mx-2"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
-  </footer>
-  <app-mini-footer *ngIf="isMobile"></app-mini-footer>
-  
+
+    <!-- Bottom Text -->
+    <div class="row mt-4">
+      <div class="social-icons">
+        <div class="icoo">
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-pinterest"></i></a>
+          <a href="#"><i class="bi bi-discord"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<app-mini-footer></app-mini-footer>

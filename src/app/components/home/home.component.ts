@@ -9,12 +9,11 @@ import { CampaignsComponent } from '../campaigns/campaigns.component';
 import { CommonModule, NgIf } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { FormsModule } from '@angular/forms';
-import { MiniFooterComponent } from "../mini-footer/mini-footer/mini-footer.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MainDivComponent, ImageGridComponent, NgIf, ProductSliderComponent, TranslateModule, MiniFooterComponent],
+  imports: [MainDivComponent, ImageGridComponent, NgIf,ProductSliderComponent,TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
