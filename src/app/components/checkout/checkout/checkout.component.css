@@ -1,0 +1,205 @@
+/* Container settings for larger screens */
+.coo {
+    display: grid;
+    grid-template-columns: 60% 40%; /* Left column (form) is 60% width, right column (summary/cart) is 40% */
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Form styling */
+.checkout-form {
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    width: 100%;
+    /* flex: 1; */
+    min-width: 300px;
+}
+
+/* Form input styling */
+.next {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.name {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Checkout summary and cart styling */
+.checkout-summary {
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    min-width: 300px;
+}
+
+.noo {
+    padding-bottom: 10px;
+}
+
+.summary, .cart {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    width: 100%;
+}
+
+.summary p, .cart div p {
+    margin: 5px 0;
+}
+
+/* Submit button styling */
+.submit, .order {
+    width: 50%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #00a3e7;
+    border-radius: 0.5rem;
+    border: 1px solid #00a3e7;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit:hover, .order:hover {
+    background: #3095c1;
+}
+
+/* Product styling inside the cart */
+.product-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.product-details {
+    display: flex;
+    align-items: center;
+}
+
+.product-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.product-price {
+    font-size: 14px;
+    color: #333;
+}
+
+.cart-total {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: right;
+}
+.rm-btn{
+    /* display: inline-block; */
+    float: right;;
+
+}
+
+/* Responsive layout for screens smaller than 1164px */
+@media (max-width: 1164px) {
+    .coo {
+        display: flex;
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center;
+    }
+
+    .checkout-form, .checkout-summary {
+        width: 100%;  /* Make form and summary take full width */
+        max-width: 600px;
+        margin-bottom: 20px;
+    }
+
+    .cart-item {
+        text-align: center; /* Center align cart items */
+    }
+
+    .cart-item .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-image {
+        max-width: 100px; /* Make images smaller */
+        margin-bottom: 10px;
+    }
+
+    .cart {
+        margin-top: 20px;
+    }
+}
+
+.shipping-header{
+    font-weight: 600;
+    border: none;
+    font-size: 2.4rem;
+    color: #999;
+
+    margin-bottom: 30px;
+    font-family: 'Myriad W08 Semibold', 'Segoe UI', 'Arial', sans-serif;
+}
+.shipping{
+    margin: 2rem 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #333;
+    border: 0;
+    padding: 0;
+    line-height: 1.42857143;
+    font-family: 'Myriad W08 Regular', 'Segoe UI', 'Arial', sans-serif;
+
+}
+.paypal-container {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Add responsive styles if needed */
+  @media (max-width: 576px) {
+    .paypal-container {
+      max-width: 100%; /* Take full width on small screens */
+      padding: 10px;
+    }
+  }
+
+.modal-backdrop {
+    opacity: 1;
+  }
+
+
+

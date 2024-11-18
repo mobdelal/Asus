@@ -1,0 +1,183 @@
+.container {
+  display: flex;
+  justify-content: center;  /* محاذاة العناصر أفقياً في المنتصف */
+  align-items: center;      /* محاذاة العناصر عمودياً في المنتصف */
+  gap: 10px;                /* مسافة بين الـ div و الـ button */
+  padding-left: 10px;
+  
+}
+
+.product-cards {
+  display: flex;
+  flex-wrap: wrap; /* يسمح للكروت بالانتقال إلى سطر جديد عند الحاجة */
+  justify-content: center; 
+  gap: 2rem; /* مسافة بين الكروت */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2.5rem;
+  width: 100%;
+  min-height: 800px;
+  max-height: auto;
+  transition: all 0.3s ease; 
+}
+.price-after-discount {
+  color: rgb(199, 66, 0);  
+}
+
+.price-original {
+  color: grey;  
+  text-decoration: line-through;
+  font-size: 0.8em;  
+}
+.save-amount {
+  color: rgb(199, 66, 0);  
+  font-size: .8em;
+  margin-left: 10px;  
+}
+
+
+
+.product-card {
+  flex: 1 1 18rem; /* الكروت تأخذ حجم 18rem بشكل افتراضي */
+  display: flex;
+  /* padding: 1rem; */
+  justify-content: center;
+  margin-bottom: 1rem; /* مسافة بين الكروت عند الانتقال لسطر جديد */
+  
+  
+}
+.card {
+  width: 100%; /* الكارد يأخذ عرض 100% من العنصر الأب */
+  max-width: 18rem; /* تعيين العرض الأقصى للكارد */
+  padding: 1rem;
+}
+
+.product-content{
+  font-size: large;
+  border-bottom: 1px solid #585856;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.star:hover {
+  color: #FFDF00;  
+}
+
+.product-center{
+  margin-top: 2px;
+}
+
+.spec-list {
+  max-height: auto;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.spec-list.expanded {
+  max-height: 500px; /* يمكنك ضبط هذا الارتفاع حسب عدد العناصر التي تحتاج عرضها */
+}
+
+.spec-list.collapsed {
+  max-height: 0; /* Collapse to 0 height */
+}
+
+.spec button {
+  cursor: pointer;
+  color: #007bff;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+button:hover {
+  color: #0056b3;
+}
+
+.product-footer {
+  width: 100%;
+  margin-top: auto;
+ flex-direction: column;
+}
+
+
+.card-body.product-footer {
+  margin-top: auto;  /* Push footer to the bottom */
+}
+
+.carousel-inner {
+  height: 250px; /* Set a fixed height for the image container */
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 20%;  /* Fixed height for the images */
+  object-fit: cover;  /* Ensures image covers the container without distortion */
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3rem;
+}
+
+/* Styling the buttons */
+.prev-button, .next-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.prev-button:hover, .next-button:hover {
+  background-color: #0056b3;
+}
+
+.prev-button:disabled, .next-button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Ensure cards are stacked vertically on smaller screens */
+@media (max-width: 768px) {
+  .product-card {
+    width: 100%;  /* Full width for smaller screens */
+    max-width: 100%; /* Avoid exceeding screen width */
+  }
+}
+/* Media Queries */
+@media (max-width: 768px) {
+  .product-card {
+    flex: 1 1 100%; /* الكروت تصبح 100% عرض في الشاشات الصغيرة */
+    margin: 10px 0; /* إضافة مسافة بين الكروت */
+  }
+
+  .card {
+    width: 100%; /* تأكيد أن الكارد سيأخذ العرض الكامل */
+    max-width: none; /* إزالة الحد الأقصى للعرض على الشاشات الصغيرة */
+  }
+}
+.container{
+  margin-left: 0px;
+
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+    max-width: none;
+  }
+  .container{
+    margin-left: 0px;
+  
+  }
+}

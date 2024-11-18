@@ -1,0 +1,58 @@
+<!-- <p>payment-methods works!</p> -->
+
+<!-- order-summary.component.html -->
+<app-mini-nav></app-mini-nav>
+  
+<div class="checkout-container coo">
+  <!-- Left Column: Checkout Form -->
+  <div class="checkout-form">
+      <h3 class="shipping-header">1. Select Shipping Method</h3>
+      <div class="shipping ">shipping address</div>
+      
+      <div class="checkout-details" >
+        <p><strong></strong> {{ formData.firstName }}</p>
+        <p><strong></strong> {{ formData.lastName }}</p>
+        <p><strong></strong> {{ formData?.address }}</p>
+        <p><strong></strong> {{ formData?.governance }}</p>
+        <p><strong></strong> {{ formData?.city }}</p>
+        <p><strong></strong> {{ formData?.phone }}</p>
+      </div>
+      
+      <div class="checkout-details2" style="border-top: 1px solid navy;">
+        <div class="shipping mb-3 mt-3">Delivery options</div>
+       
+        <p><strong></strong> {{ formData.shippingMethod }}</p>
+      </div>
+
+
+  </div>
+
+  <!-- Right Column: Summary and Cart -->
+  <div class="checkout-summary">
+      <div class="summary">
+          <h3>Summary</h3>
+          <p>Cart Subtotal: EGP 224,298.00</p>
+          <p>Shipping Method: EGP 0.00</p>
+          <p>Order Total: EGP 224,298.00</p>
+          <div class="terms">
+              <input formControlName="agreeTerms" type="checkbox" required />
+              <label>I agree to the terms and conditions</label>
+          </div>
+          
+          <div style="text-align: center;">
+
+          </div>
+      </div>
+
+      <div class="cart">
+          <h3>2 Items in Cart</h3>
+          <div>
+              <p>ASUS ProArt P16 H7600W - Qty: 1 - Subtotal: EGP 148,099.00</p>
+          </div>
+          <div>
+              <p>ASUS TUF Gaming F15 (2023) - Qty: 1 - Subtotal: EGP 76,199.00</p>
+          </div>
+      </div>
+  </div>
+</div> <br><br><br><br><br><br> <br><br><br><br>
+<app-mini-footer></app-mini-footer>

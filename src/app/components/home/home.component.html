@@ -1,0 +1,56 @@
+<div class="page-wrapper">
+  <button
+    *ngIf="showScrollTopButton"
+    class="scroll-top-btn"
+    (click)="scrollToTop()"
+  >
+    <!-- <img src="../../../assets/images/up.png" alt="" /> -->
+    <!-- &#8593; -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 45 47"
+    >
+      <path
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        stroke-width="1.2"
+        d="M12.925 26.95L22 17.545l9.075 9.405"
+      ></path>
+    </svg>
+    <!-- Up Arrow -->
+  </button>
+  <app-main-div></app-main-div>
+  <app-image-grid></app-image-grid>
+  <!-- <app-campaigns></app-campaigns> -->
+  <div class="d-flex justify-content-center mt-5 mb-5">
+    <h3 class="custom-font-weight">{{ "hotDeals" | translate }}</h3>
+  </div>
+  <div class="container">
+    <!-- <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div> -->
+
+    <div class="row">
+      <div class="col-12 position-relative">
+        <!-- Product Slider -->
+        <div class="product-slider">
+          <!-- <button class="slider-btn prev-btn" (click)="scrollSlider('prev')">
+          &#10094;
+        </button> -->
+
+          <app-product-slider></app-product-slider>
+
+          <!-- <div class="slider-container">
+        </div> -->
+
+          <!-- <button class="slider-btn next-btn" (click)="scrollSlider('next')">
+          &#10095;
+        </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <app-product-slider></app-product-slider> -->
+</div>

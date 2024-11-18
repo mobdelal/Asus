@@ -1,0 +1,196 @@
+<app-mini-nav></app-mini-nav> <br /><br />
+<div class="sign-up-container" [dir]="direction">
+  <h2>{{ "register.SIGN_UP_NOW" | translate }}</h2>
+  <p 
+  style="margin: var(--paragraph-margin, 0 150px 50px 150px); text-align: center;" 
+  class="responsive-paragraph">
+  {{ "register.NOTE" | translate }}
+  <a [routerLink]="'/login'" routerLinkActive="router-link-active">{{
+    "register.LOGIN" | translate
+  }}</a>
+    <!-- {{ "register.DIRECTLY" | translate }} -->
+  </p>
+
+  <!-- Third-party signup options -->
+  <!-- <div class="social-sign-up">
+    <button>
+      {{ "register.SIGN_UP_WITH" | translate }}
+      <img
+        src="https://account.asus.com/img/openid/icon_fb.svg"
+        alt="Facebook"
+      />
+    </button>
+    <button>
+      {{ "register.SIGN_UP_WITH" | translate }}
+      <img
+        src="https://account.asus.com/img/openid/icon_google.svg"
+        alt="Google"
+      />
+    </button>
+    <button>
+      {{ "register.SIGN_UP_WITH" | translate }}
+      <img
+        src="https://account.asus.com/img/openid/icon_apple.svg"
+        alt="Apple"
+      />
+    </button>
+    <button>
+      {{ "register.SIGN_UP_WITH" | translate }}
+      <img
+        src="https://account.asus.com/img/openid/icon_microsoft.svg"
+        alt="Microsoft"
+      />
+    </button>
+  </div> -->
+
+  <div class="divider">
+    <span>{{ "register.OR_SIGN_IN_WITH" | translate }}</span>
+  </div>
+
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="lab">{{ "register.ACCOUNT" | translate }}</label>
+      <input type="email" formControlName="account" />
+      <small class="required">{{
+        "register.ACCOUNT_REQUIRED" | translate
+      }}</small>
+      <div
+        *ngIf="
+          signUpForm.get('account')?.touched &&
+          signUpForm.get('account')?.invalid
+        "
+      >
+        <small
+          class="text-danger"
+          *ngIf="signUpForm.get('account')?.errors as errors"
+        >
+          <span *ngIf="errors['required']">{{
+            "register.ACCOUNT_IS_REQUIRED" | translate
+          }}</span>
+        </small>
+        <small
+          *ngIf="signUpForm.get('account')?.errors?.['email']"
+          class="text-danger"
+        >
+          {{ "register.EMAIL_VALID" | translate }}
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="lab">{{ "register.PASSWORD" | translate }}</label>
+      <input type="password" formControlName="password" />
+      <div
+        *ngIf="
+          signUpForm.get('password')?.invalid &&
+          signUpForm.get('password')?.touched
+        "
+        class="text-danger"
+      >
+        <small *ngIf="signUpForm.get('password')?.errors?.['required']">
+          {{ "register.PASSWORD_REQUIRED" | translate }}
+        </small>
+        <small *ngIf="signUpForm.get('password')?.errors?.['minlength']">
+          {{ "register.PASSWORD_MINLENGTH" | translate }}
+        </small>
+        <small *ngIf="signUpForm.get('password')?.errors?.['passwordStrength']">
+          {{ "register.PASSWORD_STRENGTH" | translate }}
+        </small>
+      </div>
+      <small class="pass">
+        {{ "register.PASSWORD_GUIDE" | translate }}
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>{{ "register.RE_ENTER_PASSWORD" | translate }}</label>
+      <input type="password" formControlName="reEnterPassword" />
+      <div
+        *ngIf="signUpForm.errors?.['passwordsMismatch'] && signUpForm.get('reEnterPassword')?.touched"
+        class="text-danger"
+      >
+        <small>{{ "register.PASSWORD_MISMATCH" | translate }}</small>
+      </div>
+      <small class="required">{{
+        "register.PASSWORD_RE_ENTER_GUIDE" | translate
+      }}</small>
+    </div>
+
+    <div class="form-group">
+      <label>{{ "register.DATE_OF_BIRTH" | translate }}</label>
+      <div class="dob" formGroupName="dob">
+        <select formControlName="year">
+          <option value="" disabled selected hidden>
+            {{ "register.YEAR" | translate }}
+          </option>
+          <option *ngFor="let year of getYears()" [value]="year">
+            {{ year }}
+          </option>
+        </select>
+        <select formControlName="month">
+          <option value="" disabled selected hidden>
+            {{ "register.MONTH" | translate }}
+          </option>
+          <option *ngFor="let month of getMonths()" [value]="month">
+            {{ month }}
+          </option>
+        </select>
+        <select formControlName="day">
+          <option value="" disabled selected hidden>
+            {{ "register.DAY" | translate }}
+          </option>
+          <option *ngFor="let day of getDays()" [value]="day">{{ day }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div *ngIf="registrationError" class="error" class="text-danger">
+      {{ registrationError }}
+    </div>
+
+    <div class="form-group checkbox-container">
+      <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" />
+      <label for="acceptTerms" class="lab">{{
+        "register.PRIVACY_POLICY" | translate
+      }}</label>
+
+      <small
+        *ngIf="
+          signUpForm.get('acceptTerms')?.hasError('required') &&
+          signUpForm.get('acceptTerms')?.touched
+        "
+        class="error text-danger"
+        style="display: block; margin-top: 5px"
+      >
+        {{ "register.ACCEPT_POLICY_REQUIRED" | translate }}
+      </small>
+    </div>
+
+    <!-- <div class="form-group checkbox-container">
+      <input type="checkbox" formControlName="acceptCloudPolicy" id="acceptCloudPolicy">
+      <label for="acceptCloudPolicy" class="lab">I acknowledge and agree to ASUS Cloud Privacy Policy</label>
+    </div> -->
+    <!-- <div class="form-group checkbox-container">
+      <input
+        type="checkbox"
+        formControlName="subscribeToASUSNews"
+        id="subscribeToASUSNews"
+      />
+      <label for="subscribeToASUSNews"
+        >Keep me up to date by eDMs and notices with ASUS news, latest products,
+        and service information.</label
+      >
+    </div> -->
+    <!-- <div class="form-group checkbox-container">
+      <input type="checkbox" formControlName="subscribeToCloudNews" id="subscribeToCloudNews">
+      <label for="subscribeToCloudNews">Keep me up to date by eDMs with ASUS Cloud news, latest products, and service information.</label>
+    </div> -->
+
+    <button type="submit" [disabled]="signUpForm.invalid">
+      {{ "register.SIGN_UP" | translate }}
+    </button>
+  </form>
+</div>
+<br />
+
+<app-mini-footer></app-mini-footer>

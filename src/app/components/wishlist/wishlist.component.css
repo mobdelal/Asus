@@ -1,0 +1,24 @@
+/* Sidebar styles */
+.active-link {
+  border-right: 3px solid #007bff;
+  color: #007bff;
+}
+.list-group-item {
+  text-align: center;
+}
+
+/* Wishlist product card styles */
+.card {
+  border: 1px solid #ddd;
+}
+.card img {
+  max-height: 150px;
+  object-fit: contain;
+}
+.card h6 {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+.card p {
+  font-size: 0.9rem;
+}

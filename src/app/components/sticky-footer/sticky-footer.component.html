@@ -1,0 +1,39 @@
+<div class="navbar navbar-expand navbar-light bg-light fixed-bottom shadow">
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Delivery Section -->
+    <div class="d-flex align-items-center" style="margin-top: -10px">
+      <i class="bi bi-box-seam fs-4 me-2"></i>
+      <div>
+        <span class="fw-bold">{{ "delivery" | translate }}</span>
+        <br />
+        <small>{{ "deliveryDetails" | translate }}</small>
+      </div>
+    </div>
+
+    <!-- Price Section -->
+    <div class="text-center">
+      <h4 class="mb-0">
+        EGP
+        {{
+          product.priceAfterDiscount
+            ? (product.priceAfterDiscount | number : "1.2-2")
+            : (product.price | number : "1.2-2")
+        }}
+      </h4>
+      <small>{{ "vatIncluded" | translate }}</small>
+    </div>
+
+    <!-- Cart and Favorite Section -->
+    <div class="d-flex align-items-center">
+      <button class="btn btn-primary me-3" (click)="addToCart(product)">
+        {{ "addToCart" | translate }}
+      </button>
+      <button class="heart-btn" (click)="toggleFavorite()">
+        <i
+          [ngClass]="favorite ? 'bi bi-heart-fill active' : 'bi bi-heart'"
+          class="fs-5"
+        ></i>
+      </button>
+    </div>
+  </div>
+</div>

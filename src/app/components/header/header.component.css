@@ -1,0 +1,71 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    background-color: #fff; /* Adjust to match the actual color */
+    border-bottom:1px solid #ccc;
+  }
+  
+  .navbar-brand {
+    display: flex; /* Make the container a flexbox */
+    margin-left: 120px;
+  }
+  
+  .logo {
+    margin: 0 10px; 
+    width: auto; /* Allow images to adjust to content */
+    font-size: .8125rem;
+    height: auto; /* Allow images to adjust to content */
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+    box-sizing: border-box;
+    font-family: TTNormsProNormal, Segoe UI, Arial, PingFang TC, Microsoft JhengHei, sans-serif;
+    font-size: 16px;
+    font-weight: 7px;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-right: 170px;
+
+    color: #555; /* Adjust to match text color */
+  }
+  
+  .navbar-links span {
+    cursor: pointer;
+  }
+  
+  .links{
+    padding-top: 4px;
+  }
+
+  
+ 
+  /* Remove the default text-decoration */
+  .navbar-links li a {
+    position: relative;
+    text-decoration: none; /* Remove default underline */
+    color: #4d4d4d;
+    line-height: 20px;
+    font-size: .8125rem;
+    cursor: pointer;
+    font-weight: 500;
+    padding-bottom: 5px; /* Space between text and underline */
+  }
+
+  .navbar-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -9px; /* Space between text and underline */
+    width: 0%;
+    height: 2px; /* Thickness of the underline */
+    background-color: #000000; /* Underline color */
+    transition: width 0.3s ease; /* Smooth animation */
+  }
+  
+  .navbar-links li a:hover::after {
+    width: 100%; /* Full width on hover */
+  }

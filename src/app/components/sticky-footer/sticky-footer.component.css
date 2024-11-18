@@ -1,0 +1,19 @@
+.fixed-bottom {
+  padding: 10px 0;
+}
+.btn-primary {
+  background-color: #007bff; 
+}
+.text-primary {
+  color: #007bff; 
+}
+.heart-btn {
+  background: none;
+  border: none;
+  color: #007bff; 
+  padding: 0;
+  font-size: 1.25rem;
+}
+.heart-btn .bi-heart-fill.active {
+  color: #007bff; 
+}

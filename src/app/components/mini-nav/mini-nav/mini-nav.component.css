@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    background-color: #fff; /* Adjust to match the actual color */
+    border-bottom:1px solid #ccc;
+  }
+  
+
+  
+  .brand-logo {
+    margin: 0 10px; 
+    /* fill: #000;  */
+    filter: brightness(0) ; 
+    /* background-color: black;  */
+    width: 90px; /* Allow images to adjust to content */
+    font-size: .8125rem;
+    height: 30px; /* Allow images to adjust to content */
+  }

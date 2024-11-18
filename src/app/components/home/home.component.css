@@ -1,0 +1,85 @@
+/* home.component.css */
+
+/* Container for the product slider */
+.product-slider {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Hide the scrollbars */
+  }
+  
+  /* The container that holds all product cards in a horizontal line */
+  .slider-container {
+    display: flex;
+    flex-wrap: nowrap; /* Ensures items stay in one row */
+    gap: 15px; /* Space between cards */
+    overflow-x: auto; /* Allow horizontal scroll */
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 0 15px; /* Add padding for left/right margin */
+  }
+  
+  /* Hide the default scrollbar */
+  .slider-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Arrow buttons */
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .prev-btn {
+    left: 0;
+  }
+  
+  .next-btn {
+    right: 0;
+  }
+  .custom-font-weight {
+    font-weight: 500; 
+  }
+  body, html {
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  .modal-backdrop {
+    position: relative !important;
+}
+
+body, html {
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.scroll-top-btn {
+  position: fixed; /* Keep it fixed relative to the viewport */
+  bottom: 20px;    /* 20px from the bottom of the viewport */
+  left: 20px;     /* 20px from the right side of the viewport */
+  background-color: #8e9194; /* Button color */
+  color: white;    /* Button text color */
+  border: none;    /* No border */
+  padding: 0px;    /* Adjust size */
+  border-radius: 50%;  /* Circular button */
+  cursor: pointer; /* Show a pointer cursor */
+  z-index: 9999;    /* Ensure the button is above other content */
+  opacity: .7;       /* Invisible initially */
+}
+.scroll-top-btn svg {
+  width: 70px;               /* Adjust width of the arrow */
+  height: 70px;              /* Adjust height of the arrow */
+  fill: none;                /* Ensure there's no background color */
+}
+
+
+
+  

@@ -1,0 +1,105 @@
+<div class="container mt-5" *ngIf="product">
+  <!-- First Navbar (Sticky at the top) -->
+  <div class="navbar first-navbar">
+    <h5>{{ product.name_EN }}</h5>
+    <span>{{ "overview" | translate }}</span>
+  </div>
+
+  <div class="container mt-5 px-4" [dir]="direction">
+    <div class="row">
+      <!-- Thumbnails and Main Image -->
+      <div class="col-2 d-flex flex-column align-items-center">
+        <!-- Thumbnail Images -->
+        <img
+          *ngFor="let imageUrl of product.imageURLs"
+          [src]="'https://asus-dashboard.runasp.net' + imageUrl"
+          class="thumbnail-img mb-2"
+          [class.active]="activeImage === imageUrl"
+          (click)="setActiveImage(imageUrl)"
+          alt="Product Thumbnail"
+        />
+      </div>
+  
+      <div class="col-5 mb-5">
+        <!-- Main Image Display -->
+        <div class="main-image-container shadow-sm rounded">
+          <img
+            [src]="'https://asus-dashboard.runasp.net' + activeImage"
+            class="main-image w-100"
+            alt="Main Product Image"
+          />
+        </div>
+      </div>
+  
+      <!-- Product Details Section -->
+      <div class="col-md-5 ps-md-5 mt-4 mt-md-0">
+        <!-- Left-Aligned Icons -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- Left-Aligned Icons -->
+  <div class="container info-section">
+    <div class="row">
+      <!-- Free Shipping -->
+      <!-- <div class="col-md-6 d-flex align-items-center mb-3">
+        <i class="bi bi-truck info-icon me-2"></i>
+        <div>
+          <h5 class="mb-1">{{ 'freeShippingTitle' | translate }}</h5>
+          <p class="text-muted mb-0">{{ 'freeShippingDescription' | translate }}</p>
+        </div>
+      </div> -->
+
+      <div class="col-md-6 d-flex align-items-center mb-3">
+        <i class="bi bi-lock info-icon me-2"></i>
+        <div class="ml-5">
+          <h5 class="mb-1">{{ "securePaymentTitle" | translate }}</h5>
+          <p class="text-muted mb-0">
+            {{ "securePaymentDescription" | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Navbar (Sticky under the first one) -->
+  <div class="navbar second-navbar">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" (click)="scrollToSection('tech-specs')">
+          {{ "techSpecs" | translate }}
+        </a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" (click)="scrollToSection('included-box')"
+          >Included in the Box</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="scrollToSection('faq')">FAQ</a>
+      </li> -->
+    </ul>
+  </div>
+
+  <!-- Sections -->
+  <div class="container my-5" [dir]="direction">
+    <div *ngIf="product.specifications && product.specifications.length > 0">
+      <div
+        class="row border-bottom py-3"
+        *ngFor="let spec of product.specifications"
+      >
+        <div class="col-6 d-flex justify-content-between">
+          <span class="font-weight-bold text-left">
+            {{ lang === "ar" ? spec.name_AR : spec.name }}
+          </span>
+          <span class="text-right">{{ spec.value }}</span>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!product.specifications || product.specifications.length === 0">
+      <p>{{ "noSpecs" | translate }}</p>
+    </div>
+  </div>
+</div>
+
+<app-sticky-footer *ngIf="product" [product]="product"></app-sticky-footer>

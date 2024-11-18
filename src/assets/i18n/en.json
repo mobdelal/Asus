@@ -1,0 +1,369 @@
+{
+  "footer": {
+    "text1": "Shop and Learn",
+    "mobile": "Mobile / Handhelds",
+    "phone": "Phones",
+    "acc": "Accessories",
+    "lap": "Laptops",
+    "home": "For Home",
+    "work": "For Work",
+    "creators": "For Creators",
+    "students": "For Students",
+    "gaming": "For Gaming",
+    "Displays":"Displays / Desktops",
+    "monitors": "Monitors",
+    "projectors": "Projectors",
+    "allInOnePCs": "All-in-One PCs",
+    "towerPCs": "Tower PCs",
+    "gamingTowerPCs": "Gaming Tower PCs",
+    "nucs": "NUCs",
+    "miniPCs": "Mini PCs",
+    "workstations": "Workstations",
+    "accessories": "Accessories",
+    "motherboardsComponents": "Motherboards / Components",
+    "motherboards": "Motherboards",
+    "graphicsCards": "Graphics Cards",
+    "cases": "Cases",
+    "cooling": "Cooling",
+    "powerSupplyUnits": "Power Supply Units",
+    "soundCards": "Sound Cards",
+    "opticalDrives": "Optical Drives",
+    "dataStorage": "Data Storage",
+    "externalGraphicsDocks": "External Graphics Docks",
+    "networkingIoTServers": "Networking / IoT / Servers",
+    "wifi7": "WiFi 7",
+    "wifi6": "WiFi 6",
+    "wifiRouters": "WiFi Routers",
+    "wholeHomeMeshWiFiSystem": "Whole Home Mesh WiFi System",
+    "businessNetworkSolutions": "Business Network Solutions",
+    "Wired Networking": "Wired Networking",
+    "Intelligent Robots": "Intelligent Robots",
+    "AIoT & Industrial Solutions": "AIoT & Industrial Solutions",
+    "Servers": "Servers",
+    "Smart Home": "Smart Home",
+    "Accessories": "Accessories",
+    "Keyboards": "Keyboards",
+    "Mice and Mouse Pads": "Mice and Mouse Pads",
+    "Headsets and Audio": "Headsets and Audio",
+    "Streaming Kits": "Streaming Kits",
+    "Apparel Bags and Gear": "Apparel Bags and Gear",
+    "Cases and Protection": "Cases and Protection",
+    "Adapters and Chargers": "Adapters and Chargers",
+    "Docks Dongles and Cable": "Docks Dongles and Cable",
+    "Power Banks": "Power Banks",
+    "Controller": "Controller",
+    "Gimbal": "Gimbal",
+    "learnMore": "Learn More",
+    "aiPc": "AI PC",
+    "advancedAiPcs": "Advanced AI PCs",
+    "asusDesignCenter": "ASUS Design Center",
+    "asuspro": "ASUSPRO",
+    "automotiveSolutions": "Automotive Solutions",
+    "avcLicensingNotice": "AVC Licensing Notice",
+    "asusBlog": "ASUS Blog",
+    "armouryCrate": "Armoury Crate",
+    "aura": "Aura",
+    "allRightsReserved": "© ASUSTeK Computer Inc. All rights reserved.",
+    "termsOfUse": "Terms of Use Notice",
+    "privacyPolicy": "Privacy Policy",
+    "exportControl": "Export Control and Sanctions Compliance"
+  },
+   "itemsInCart": " items in your cart",
+   "cartSubtotal": "Cart Subtotal ",
+   "Checkout":"Checkout",
+   "EGP":"EGP",
+
+   "cart": {
+    "empty": "The cart is empty"
+  },
+  "menu": {
+    "login": "Login",
+    "myAccount": "My Account",
+    "viewOrder": "View My Order",
+    "myWishlist": "My Wishlist",
+    "signOut": "Sign-out"
+  },
+
+
+    "aboutUs": {
+      "heading": "About Us",
+      "aboutAsus": "About ASUS",
+      "news": "News",
+      "investorRelations": "Investor Relations",
+      "pressRoom": "Press Room",
+      "asustor": "ASUSTOR Inc.",
+      "asusCloud": "ASUS Cloud Corporation",
+      "unimax": "UniMax Electronics Inc."
+    },
+    
+      "support": {
+        "heading": "Support",
+        "repairStatus": "Check Repair Status",
+        "serviceLocations": "Find Service Locations",
+        "productRegistration": "Product Registration",
+        "emailUs": "Email Us",
+        "callUs": "Call Us",
+        "securityAdvisory": "Security Advisory",
+        "supportVideos": "ASUS Support Videos"
+      
+    },
+    "sustainability": {
+    "heading": "Sustainability",
+    "esg": "ESG",
+    "environment": "Environment"
+  },
+  "navbar": {
+    "gaming": "Gaming",
+    "Commercial products":"Commercial products",
+    "business": "Business",
+    "environment": "Environment",
+    "support": "Support",
+    "mobile": "Mobile / Handhelds",
+    "laptops": "Laptops",
+    "displays": "Displays / Desktops",
+    "motherboards": "Motherboards / Components",
+    "networking": "Networking / IoT / Servers",
+    "accessories": "Accessories"
+
+  },
+      "LOGIN": {
+      "ILLUSTRATION_ALT": "Illustration",
+      "TITLE": "One Account, All ASUS",
+      "DESCRIPTION": "Sign in your ASUS account and get everything you need from one portal!",
+      "FEATURES": {
+        "WARRANTY": "Manage the warranties of your ASUS products",
+        "DOWNLOADS": "Download drivers and software for your products",
+        "SUPPORT": "Get technical support and keep track of your repair status"
+      },
+      "FORM": {
+        "TITLE": "Account Login",
+        "EMAIL_LABEL": "Account",
+        "EMAIL_PLACEHOLDER": "Please enter your email",
+        "EMAIL_REQUIRED": "Email is required.",
+        "PASSWORD_LABEL": "Password",
+        "PASSWORD_PLACEHOLDER": "Enter your password",
+        "PASSWORD_REQUIRED": "Password is required.",
+        "REMEMBER_ME": "Remember Me",
+        "FORGOT_PASSWORD": "Forgot your password?",
+        "SUBMIT_BUTTON": "Sign-in",
+        "ERROR_MESSAGE": "Invalid email or password."
+      },
+      "NO_ACCOUNT_PROMPT": "Don't Have ASUS Account?",
+      "SIGN_UP_LINK": "Sign Up Now",
+      "SOCIAL_LOGIN": "Or Sign In With",
+      "SOCIAL": {
+        "FACEBOOK": "Facebook",
+        "GOOGLE": "Google",
+        "APPLE": "Apple",
+        "MICROSOFT": "Microsoft"
+      }
+    },
+    "register":{
+      "SIGN_UP_NOW": "Sign Up Now",
+      "NOTE": "Please note that ASUS account is the same as ROG account. If you have either account, you can log in directly without registering a new one.",
+      "LOGIN": "Login",
+      "SIGN_UP_WITH": "Sign up with",
+      "OR_SIGN_IN_WITH": "Or Sign In With",
+      "ACCOUNT": "Account",
+      "ACCOUNT_REQUIRED": "Please enter your email",
+      "ACCOUNT_IS_REQUIRED": "Account is required.",
+      "EMAIL_VALID": "Enter a valid email.",
+      "PASSWORD": "Password",
+      "PASSWORD_REQUIRED": "New Password is required.",
+      "PASSWORD_MINLENGTH": "New Password must be at least 6 characters long.",
+      "PASSWORD_STRENGTH": "New Password must contain at least one uppercase letter and one special character.",
+      "PASSWORD_GUIDE": "Combination of 8~25 (upper/lowercase) letters, numbers, and symbols without space.",
+      "RE_ENTER_PASSWORD": "Re-enter Password",
+      "PASSWORD_MISMATCH": "Passwords do not match.",
+      "PASSWORD_RE_ENTER_GUIDE": "Input your password again.",
+      "DATE_OF_BIRTH": "Date of Birth",
+      "YEAR": "Year",
+      "MONTH": "Month",
+      "DAY": "Day",
+      "PRIVACY_POLICY": "I acknowledge and agree to ASUS Privacy Policy",
+      "ACCEPT_POLICY_REQUIRED": "You must accept the Privacy Policy to proceed.",
+      "SIGN_UP": "Sign Up"
+    },
+    "userDash":{
+      
+        "account": "Account",
+        "welcome": "Welcome",
+        "accountSettings": "Account Settings",
+        "changePassword": "Change Password",
+        
+        "orderStatus": "Order Status",
+        "wishlist": "My Wishlist",
+        "contacts": "Contact Us",
+        "myOrders": "My Orders",
+        "myProfile": "My Profile",
+        "changeLanguage": "Change Language",
+        
+        "accountSettingsdescription": "Account Settings",
+        "changePassworddescription": "Change Password"
+        
+      },
+      "changePasswordForm": {
+        "labels": {
+          "oldPassword": "Old Password :",
+          "newPassword": "New Password :",
+          "confirmPassword": "Confirm Password"
+        },
+        "placeholders": {
+          "oldPassword": "Enter your old password :",
+          "newPassword": "Enter your new password : ",
+          "confirmPassword": "Confirm your new password :"
+        },
+        "errors": {
+          "oldPasswordRequired": "Old Password is required.",
+          "newPasswordRequired": "New Password is required.",
+          "newPasswordMinLength": "New Password must be at least 6 characters long.",
+          "newPasswordStrength": "New Password must contain at least one uppercase letter and one special character.",
+          "confirmPasswordRequired": "Confirm Password is required.",
+          "passwordMismatch": "Confirm Password must match New Password."
+        },
+        "buttons": {
+          "save": "Save"
+        }
+      },
+      "profile": {
+        "title": "Profile",
+        "firstName": "First Name",
+        "firstNamePlaceholder": "Enter your first name",
+        "lastName": "Last Name",
+        "lastNamePlaceholder": "Enter your last name",
+        "nickName": "Nick Name",
+        "nickNamePlaceholder": "Enter your nickname",
+        "gender": "Gender",
+        "genderMale": "Male",
+        "genderFemale": "Female",
+        "address": "Address",
+        "addressPlaceholder": "Enter your address",
+        "city": "City",
+        "dateOfBirth": "Date of Birth",
+        "dobYear": "Year",
+        "dobMonth": "Month",
+        "dobDay": "Day",
+        "submit": "Submit"
+      },
+      "orders": {
+        "title": "Order Status",
+        "orderNumber": "Order Number",
+        "date": "Date",
+        "shippingTo": "Shipping To",
+        "totalAmount": "Total Amount",
+        "state": "State",
+        "details": "Details",
+        "viewDetails": "View Details",
+        "backToOrders": "Back to Orders",
+        "productImage": "Product Image",
+        "productName": "Product Name",
+        "quantity": "Quantity",
+        "price": "Price",
+        "total": "Total",
+        "productNotFound": "Product Not Found",
+        "totalShippingCost": "Total Shipping Cost",
+        "subTotal": "Subtotal",
+        "orderInformation": "Order Information",
+        "shippingAddress": "Shipping Address",
+        "shippingMethod": "Shipping Method",
+        "paymentMethod": "Payment Method",
+        "trackingNumber": "Tracking Number",
+        "BigTotal": "Grand Total"
+      
+      },
+      "contacts": {
+        "title": "Rolodex",
+        "description": "Manage your contacts here."
+      },
+
+        "checkout": {
+          "step1": "1. Select Shipping Method",
+          "shipping_address": "Your shipping address",
+          "shipping_address_details":"shipping address details",
+          "sum":"summary",
+
+          "form": {
+            "first_name": "First Name",
+            "last_name": "Last Name",
+            "address": "Address",
+            "governance": "Governorate",
+            "city": "City/Town",
+            "phone": "Phone Number",
+            "shipping_method": "Shipping Method",
+            "select_shipping_method":"select shipping method"
+          },
+          "errors": {
+            "first_name_required": "First name is required.",
+            "last_name_required": "Last name is required.",
+            "address_required": "Address is required.",
+            "governance_required": "Governorate is required.",
+            "city_required": "City is required.",
+            "phone_required": "Phone number is required.",
+            "invalid_phone": "Invalid phone number.",
+            "shipping_method_required": "Shipping method is required."
+          },
+          "buttons": {
+            "continue": "Continue",
+            "loading": "Loading...",
+            "place_order": "Place Order"
+          },
+          "summary": {
+            "cart_subtotal": "Cart Subtotal: {{ value }} EGP",
+            "shipping_cost": "Shipping Cost: {{ value }} EGP",
+            "order_total": "Order Total: {{ value }} EGP"
+          },
+          "out_of_stock_alert": {
+            "title": "Some items are out of stock or the requested quantity exceeds the available stock:",
+            "adjust_quantity": "Please adjust the quantity of these items in your cart."
+          },
+          "cart": {
+            "items_in_cart": "Items in Cart",
+            "product_name": "Product Name",
+            "remove_from_cart": "Remove from Cart",
+            "product_price": "Price",
+            "product_quantity": "Quantity",
+            "product_subtotal": "Subtotal"
+          }
+        
+      },
+      "Search":"Search" ,
+      "filters":
+      {
+        "sortAndFilter": "Sort & Filter",
+        "clearAll": "Clear All",
+        "selectedValues": "Selected Values",
+        "remove": "x",
+        "expandAll": "Expand all",
+        "collapseAll": "Collapse all",
+        "section": "Section"
+      },
+      
+      "Learn More":"Learn More",
+      "buy":"Buy",
+      "disclaimer": "This price may not refer to the specifications below.",
+      "freeShippingTitle": "Free Shipping",
+      "freeShippingDescription": "Free shipping on all orders",
+      "securePaymentTitle": "Safe and Secure Payment",
+      "securePaymentDescription": "Paymob encrypted for your payment security",
+      "techSpecs": "Tech Specs",
+      "noSpecs": "No specifications available for this product.",
+      "overview": "Overview",
+      "delivery": "Delivery",
+      "deliveryDetails": "Free delivery / 2-3 working days",
+      "vatIncluded": "All prices including VAT",
+      "addToCart": "Add to cart",
+      "Show More":"Show More",
+      "remove":"Remove",
+      "Payment":"Payment",
+      "Close":"Close",
+      "hotDeals": "Hot Deals",
+      "SeeAll":"See All",
+      "campaigns": "Campaigns"
+
+
+
+
+
+
+}
+

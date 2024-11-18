@@ -1,0 +1,387 @@
+<app-mini-nav></app-mini-nav> <br /><br />
+<div id="notification-container" class="container"></div>
+
+<div [dir]="lang == 'en' ? 'ltr' : 'rtl'" class="checkout-container coo">
+  <!-- Left Column: Checkout Form -->
+  <div class="checkout-form" *ngIf="!showDetails">
+    <h3>{{ "checkout.step1" | translate }}</h3>
+    <div class="shipping p-3" style="border-top: 1px solid #808080">
+      {{ "checkout.shipping_address" | translate }}
+    </div>
+
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <div class="form-group next">
+        <div class="form-group-item name">
+          <label>{{ "checkout.form.first_name" | translate }}</label>
+          <input
+            formControlName="firstName"
+            type="text"
+            required
+            autocomplete="given-name"
+          />
+          <div
+            *ngIf="
+              checkoutForm.get('firstName')?.invalid &&
+              checkoutForm.get('firstName')?.touched
+            "
+            class="error-message"
+          >
+            <small class="text-danger">{{
+              "checkout.errors.first_name_required" | translate
+            }}</small>
+          </div>
+        </div>
+        <div class="form-group-item name">
+          <label>{{ "checkout.form.last_name" | translate }}</label>
+          <input
+            formControlName="lastName"
+            type="text"
+            required
+            autocomplete="family-name"
+          />
+          <div
+            *ngIf="
+              checkoutForm.get('lastName')?.invalid &&
+              checkoutForm.get('lastName')?.touched
+            "
+            class="error-message"
+          >
+            <small class="text-danger">{{
+              "checkout.errors.last_name_required" | translate
+            }}</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group noo">
+        <label>{{ "checkout.form.address" | translate }}</label>
+        <input
+          formControlName="address"
+          type="text"
+          required
+          autocomplete="street-address"
+        />
+        <div
+          *ngIf="
+            checkoutForm.get('address')?.invalid &&
+            checkoutForm.get('address')?.touched
+          "
+          class="error-message"
+        >
+          <small class="text-danger">{{
+            "checkout.errors.address_required" | translate
+          }}</small>
+        </div>
+      </div>
+
+      <div class="form-group next">
+        <div class="form-group-item name">
+          <label>{{ "checkout.form.governance" | translate }}</label>
+          <input
+            formControlName="governance"
+            type="text"
+            required
+            autocomplete="region"
+          />
+          <div
+            *ngIf="
+              checkoutForm.get('governance')?.invalid &&
+              checkoutForm.get('governance')?.touched
+            "
+            class="error-message"
+          >
+            <small class="text-danger">{{
+              "checkout.errors.governance_required" | translate
+            }}</small>
+          </div>
+        </div>
+        <div class="form-group-item name">
+          <label>{{ "checkout.form.city" | translate }}</label>
+          <input
+            formControlName="city"
+            type="text"
+            required
+            autocomplete="address-level2"
+          />
+          <div
+            *ngIf="
+              checkoutForm.get('city')?.invalid &&
+              checkoutForm.get('city')?.touched
+            "
+            class="error-message"
+          >
+            <small class="text-danger">{{
+              "checkout.errors.city_required" | translate
+            }}</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group noo">
+        <label>{{ "checkout.form.phone" | translate }}</label>
+        <input
+          formControlName="phone"
+          type="text"
+          required
+          autocomplete="tel"
+        />
+
+        <div
+          *ngIf="
+            checkoutForm.get('phone')?.invalid &&
+            checkoutForm.get('phone')?.touched
+          "
+          class="error-message"
+        >
+          <small
+            class="text-danger"
+            *ngIf="checkoutForm.get('phone')?.hasError('required')"
+            >{{ "checkout.errors.phone_required" | translate }}
+          </small>
+
+          <small
+            class="text-danger"
+            *ngIf="checkoutForm.get('phone')?.hasError('pattern')"
+            >{{ "checkout.errors.invalid_phone" | translate }}
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="shippingMethod">{{
+          "checkout.form.shipping_method" | translate
+        }}</label>
+        <select
+          class="form-control"
+          formControlName="shippingMethod"
+          required
+          (ngModelChange)="onShippingMethodChange($event)"
+        >
+          <option value="" disabled selected hidden>
+            {{ "checkout.form.select_shipping_method" | translate }}
+          </option>
+
+          <option
+            *ngFor="let method of shippingMethods"
+            [value]="method.method_Name"
+          >
+            {{ method.method_Name }}
+          </option>
+        </select>
+        <div
+          *ngIf="
+            checkoutForm.get('shippingMethod')?.invalid &&
+            checkoutForm.get('shippingMethod')?.touched
+          "
+          class="error-message"
+        >
+          <small class="text-danger">{{
+            "checkout.errors.shipping_method_required" | translate
+          }}</small>
+        </div>
+      </div>
+
+      <div style="text-align: center">
+        <button
+          *ngIf="!loading"
+          type="submit"
+          class="submit"
+          [disabled]="checkoutForm.invalid"
+        >
+          {{ "checkout.buttons.continue" | translate }}
+        </button>
+        <button *ngIf="loading" class="btn btn-primary" type="button" disabled>
+          <span
+            class="spinner-border spinner-border-sm"
+            aria-hidden="true"
+          ></span>
+          <span role="status">{{
+            "checkout.buttons.loading" | translate
+          }}</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- details div  -->
+  <div *ngIf="showDetails" class="checkout-form">
+    <h3 class="shipping-header">
+      {{ "checkout.shipping_address_details" | translate }}
+    </h3>
+    <div class="shipping">{{ "checkout.shipping_address" | translate }}</div>
+
+    <div class="checkout-details">
+      <p>
+        <strong>{{ "checkout.form.first_name" | translate }}:</strong>
+        {{ checkoutForm.value.firstName }}
+      </p>
+      <p>
+        <strong>{{ "checkout.form.last_name" | translate }}:</strong>
+        {{ checkoutForm.value.lastName }}
+      </p>
+      <p>
+        <strong>{{ "checkout.form.address" | translate }}:</strong>
+        {{ checkoutForm.value.address }}
+      </p>
+      <p>
+        <strong>{{ "checkout.form.governance" | translate }}:</strong>
+        {{ checkoutForm.value.governance }}
+      </p>
+      <p>
+        <strong>{{ "checkout.form.city" | translate }}:</strong>
+        {{ checkoutForm.value.city }}
+      </p>
+      <p>
+        <strong>{{ "checkout.form.phone" | translate }}:</strong>
+        {{ checkoutForm.value.phone }}
+      </p>
+      <p>
+        <strong>{{ "checkout.form.shipping_method" | translate }}:</strong>
+        {{ checkoutForm.value.shippingMethod }}
+      </p>
+    </div>
+  </div>
+
+  <div class="checkout-summary">
+    <div class="summary">
+      <h3>{{ "checkout.sum" | translate }}</h3>
+      <p>
+        {{
+          "checkout.summary.cart_subtotal" | translate : { value: cartSubtotal }
+        }}
+      </p>
+      <p>
+        {{
+          "checkout.summary.shipping_cost" | translate : { value: shippingCost }
+        }}
+      </p>
+      <p>
+        {{ "checkout.summary.order_total" | translate : { value: orderTotal } }}
+      </p>
+      <!-- <div class="terms">
+            <input formControlName="agreeTerms" type="checkbox" required />
+            <label>I agree to the terms and conditions</label>
+          </div> -->
+
+      <div
+        *ngIf="formSubmitted && checkoutForm.valid"
+        style="text-align: center"
+      >
+        <a
+          type="button"
+          class="order"
+          (click)="placeOrder()"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          >{{ "checkout.buttons.place_order" | translate }}</a
+        >
+      </div>
+
+      <div
+        class="modal fade custom"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered myModal custom">
+          <!-- Center the modal vertically -->
+          <div class="modal-content custom">
+            <div class="modal-header custom">
+              <h5 class="modal-title" id="exampleModalLabel">
+                {{ "Payment" | translate }}
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                [dir]="lang == 'en' ? 'ltr' : 'rtl'"
+              ></button>
+            </div>
+            <div class="modal-body custom">
+              <div class="d-flex justify-content-center py-2">
+                <!-- Center horizontally -->
+                <div
+                  class="paypal-container"
+                  style="
+                    width: 100%;
+                    padding: 0px;
+                    height: 200px;
+                    background-color: #fff;
+                  "
+                >
+                  <ngx-paypal
+                    [config]="payPalConfig"
+                    style="width: 100%"
+                  ></ngx-paypal>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer custom">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                {{ "Close" | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="outOfStockItems.length > 0" class="alert alert-danger mt-2">
+        <small>{{ "checkout.out_of_stock_alert.title" | translate }}</small>
+        <ul>
+          <li *ngFor="let item of outOfStockItems">
+            <strong>{{ item.name }}</strong> - Requested:
+            {{ item.requestedQuantity }}, Available:
+            {{ item.availableQuantity }}
+          </li>
+        </ul>
+        <p>{{ "checkout.out_of_stock_alert.adjust_quantity" | translate }}</p>
+      </div>
+    </div>
+
+    <!-- cart and its item div -->
+    <div class="cart">
+      <h3>
+        {{ cartItems.length }} {{ "checkout.cart.items_in_cart" | translate }}
+      </h3>
+
+      <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+        <p class="product-name">{{ item.product.name }}</p>
+        <!-- <button (click)="removeFromCart(i)" class="btn-close rm-btn"></button> -->
+
+        <div class="d-flex justify-content-between align-items-center">
+          <img
+            [src]="
+              'https://asus-dashboard.runasp.net' + item.product.imageURLs[0]
+            "
+            alt="{{ item.product.name }}"
+            class="product-image"
+          />
+          <p class="product-price">
+            {{ item.product.price | number : "1.2-2" }} EGP
+          </p>
+        </div>
+        <p class="product-quantity">
+          {{ "checkout.cart.product_quantity" | translate }} :
+          {{ item.quantity }}
+        </p>
+        <p class="product-subtotal">
+          {{ "checkout.cart.product_subtotal" | translate }}:
+          {{ item.product.price * item.quantity | number : "1.2-2" }} EGP
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<br /><br />
+<app-mini-footer></app-mini-footer>
+<style>
+  .modal-backdrop {
+    opacity: 1 !important;
+  }
+</style>

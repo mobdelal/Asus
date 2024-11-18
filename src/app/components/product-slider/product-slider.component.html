@@ -1,0 +1,136 @@
+
+<div class="container">
+  <button class="prev-button prev" (click)="prev()" [disabled]="currentIndex === 0">
+    <i class="bi bi-arrow-left"></i> 
+  </button>
+
+  <div class="product-cards">
+    <div *ngFor="let product of visibleProducts" class="product-card">
+      <div class="card" style="width: 18rem;">
+        
+        <!-- Carousel Section -->
+        <div id="productCarousel{{ product.id }}" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div *ngFor="let imageURL of product.imageURLs; let i = index" class="carousel-item" [class.active]="i === 0">
+              <img [src]="'http://asus-dashboard.runasp.net' + imageURL" class="d-block w-100" alt="Product Image {{ i + 1 }}" (click)="viewProductDetails(product.id)" />
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#productCarousel' + product.id" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#productCarousel' + product.id" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <!-- Card Body Section -->
+       
+          <div class="product-content">
+            <p class="product-title">{{ product.name }}</p>
+    
+              <span class="star">&#9733;</span>  
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9734;</span> 
+            
+          </div>
+
+        <!-- List Group Section -->
+        <div class="product-center">
+
+          <p class="m" style="color: rgb(146, 141, 141)">
+            ASUS estore price
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              svg-inline=""
+              tabindex=""
+              role="presentation"
+              focusable="false"
+              class="ProductCardNormalStore2__cardSafetyIcon__1Bt-M"
+            >
+              <circle cx="6" cy="6" r="4.75" stroke="#4D4D4D"></circle>
+              <rect
+                x="5.5"
+                y="5.5"
+                width="1"
+                height="3"
+                rx=".5"
+                fill="#4D4D4D"
+              ></rect>
+              <rect
+                x="5.5"
+                y="3.5"
+                width="1"
+                height="1"
+                rx=".5"
+                fill="#4D4D4D"
+              ></rect>
+            </svg>
+          </p>
+          <p *ngIf="product.priceAfterDiscount" class="price-discounted">
+            <span class="price-after-discount">
+              {{ product.priceAfterDiscount | number:'1.2-2' }} EGP
+            </span>
+            <br>
+            <span class="price-original" style="text-decoration: line-through; font-size: 0.8em;">
+              {{ product.price | number:'1.2-2' }} EGP
+            </span>
+            <span class="save-amount">
+              SAVE {{ (product.price - product.priceAfterDiscount) | number:'1.2-2' }} EGP
+            </span>
+          </p>
+          
+          <p *ngIf="!product.priceAfterDiscount" class="price">
+            {{ product.price | number:'1.2-2' }} EGP
+          </p>
+            
+          <p class="disclaimer" style="font-size: xx-small;">
+            {{'disclaimer' |translate}}
+           </p>
+  
+  
+          </div>
+          <div class="spec-list">
+            <ul
+              [ngClass]="{ collapsed: !product.showFullSpecs, expanded: product.showFullSpecs }"
+              class="spec-lit"
+              *ngIf="product.showFullSpecs"
+            >
+              <li *ngFor="let spec of product.specifications">
+                {{ spec.value }}
+              </li>
+            </ul>
+          
+            <button (click)="toggleSpecsForAll()" class="btn btn-link p-0">
+              {{ product.showFullSpecs ? "See Less" : "See More" }}
+            </button>
+          </div>
+          
+
+
+        <!-- Footer Section -->
+        <div class="product-footer">
+        
+          <a
+          class="btn btn-primary w-100 mb-2"
+          (click)="addToCartAndCheckout(product)"
+        >
+          {{'buy' |translate}}
+        </a> 
+          <button href="#" class="btn btn-outline-primary w-100" (click)="viewProductDetails(product.id)">{{'Learn More' | translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="next-button next" (click)="next()" [disabled]="currentIndex + itemsPerPage >= 6">
+    <i class="bi bi-arrow-right"></i>
+  </button>
+</div>

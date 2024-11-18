@@ -1,0 +1,35 @@
+/* Main container styling */
+.container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+    min-height: 80vh; /* Optional: makes the content vertically centered */
+    padding-top: 10px; /* Adjust top padding */
+    margin-top: -30px; /* Move container up by 30px */
+}
+
+/* Centered content box with gray border and padding */
+.centered-container .content-box {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    background-color: #fff; /* White background */
+    width: 60%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .centered-container .content-box {
+        width: 90%; /* Expand width on smaller screens */
+        padding: 25px; /* Increase padding for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .centered-container .content-box {
+        width: 100%; /* Full width on very small screens */
+        padding: 30px; /* Additional padding for better readability */
+    }
+}

@@ -1,0 +1,141 @@
+.container {
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 1rem;
+}
+
+ul.list-unstyled li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+ul.list-group {
+  margin-top: 20px;
+}
+
+ul.list-group-item {
+  font-size: 15px;
+  background-color: #f8f9fa;
+  border: none;
+  padding: 12px 16px;
+}
+
+.thumbnail-img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail-img.active,
+.thumbnail-img:hover {
+  border-color: black;
+}
+
+.main-image-container {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.main-image {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.d-flex.align-items-center {
+  margin-bottom: 1rem;
+}
+
+.fa-truck,
+.fa-shield-alt {
+  color: black;
+  margin-right: 1rem;
+}
+
+p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+  .font-weight-bold {
+  font-weight: bold;
+}
+.border-bottom {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+
+
+/* First Navbar */
+.first-navbar {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  z-index: 1; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Second Navbar */
+.second-navbar {
+  position: sticky;
+  top: 50px; /* Adjust to the height of the first navbar */
+  background-color: white;
+  border-bottom: 1px solid black;
+  padding: 10px 20px;
+  z-index: 1020; /* Just below the first navbar */
+}
+.second-navbar .nav-link {
+  color: black;
+}
+
+
+/* Section Styling */
+.section {
+  padding: 50px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Navigation links */
+.nav-tabs .nav-link {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.nav-tabs .nav-link.active {
+  border-bottom: 2px solid black;
+  font-weight: bold;
+}
+
+.product-details {
+  margin: 40px;
+}
+.product-details h6 {
+  font-weight: bold;
+  margin-top: 15px;
+}
+.product-details p {
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.product-details ul {
+  margin-top: 10px;
+  list-style-type: none;
+  padding: 0;
+}
+.product-details ul li::before {
+  content: "• "; /* Bullet symbol */
+  color: black;
+  font-weight: bold;
+}

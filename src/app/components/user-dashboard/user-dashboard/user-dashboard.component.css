@@ -1,0 +1,286 @@
+/* Main container for layout */
+
+
+.container {
+    /* overflow-x: hidden; */
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    /* max-width: 2000px; */
+    margin-top: 2rem;
+    padding: 1rem;
+    /* background-color: #f5f5f5; */
+    align-items: flex-start; /* Align items to the top */
+
+
+
+  }
+
+  .main{
+    display: flex;
+    margin-top:5rem;
+    margin-left: 20rem;
+    margin-bottom: 0px;
+
+  }
+  .sidebar-title {
+    font-size: 1rem; 
+    margin: 0; 
+    color: #333;
+    text-align: center;
+  }
+  /* Sidebar styles */
+  .sidebar {
+    background-color: #f5f5f5;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Set sidebar width */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+    
+  }
+  
+  .sidebar.collapsed {
+    width: 50px; /* Collapsed sidebar width */
+  }
+  
+  /* Sidebar toggle button */
+  .sidebar-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  .sidebar-toggle i:first-child { /* Icon for collapsed state */
+    display: none;
+  }
+  
+  .sidebar.collapsed .sidebar-toggle i:first-child { /* Show icon for collapsed state */
+    display: block;
+  }
+  
+  .sidebar.collapsed .sidebar-toggle i:last-child { /* Hide icon for expanded state */
+    display: none;
+  }
+  
+  /* Cards container */
+  .cards-container {
+    flex: 1; 
+    /* display: flex; */
+    flex-direction: row;
+    gap: 1rem;
+    line-height: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Individual card styling */
+.card {
+    flex: 1 0 calc(50% - 1rem); /* Maintain 50% width for each card */
+    background-color: #ffffff;
+    padding: 1rem;
+    margin: 3rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .container {
+      display: flex;
+      flex-direction: column; /* Stack content vertically */
+    }
+  
+    .sidebar {
+      width: 90%; /* Take almost full width on small screens */
+      padding: 1.5rem; /* Reduce padding for smaller screens */
+    }
+  
+    .sidebar.collapsed {
+      width: 0; /* Hide sidebar when collapsed */
+    }
+  
+    .cards-container {
+      width: 100%; /* Adjust card container to take full width */
+    }
+  }
+  
+  /* For extra small screens */
+  @media (max-width: 480px) {
+    .sidebar {
+      padding: 1rem; /* Further reduce padding for extra small screens */
+    }
+  
+    .sidebar-title {
+      font-size: 0.9rem; /* Adjust title size for readability */
+    }
+  }
+
+
+
+ul {
+    list-style: none; /* إزالة النقاط */
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px; /* مسافة بين العناصر */
+    cursor: pointer;
+  }
+  ul li a {
+    text-decoration: none; 
+    color: gray;
+  }
+  ul.navbar-nav li a:hover {
+    text-decoration: underline;
+    text-decoration-style: dotted; /* تغيير نوع الخط إلى منقط */
+    text-underline-offset: 3px; /* المسافة بين الخط والنص */
+    color: #333;
+}
+  .option{
+    text-decoration-style: dotted; 
+    color: gray;
+    padding-left: 10px; /* Adjust the padding as needed */
+
+  }
+  .submenu {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+  }
+  
+  .submenu.open {
+    max-height: 200px; 
+    opacity: 1;
+  }
+  .form-select {
+    border: none;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+.form-select {
+  /* ... other styles ... */
+  padding-left: 10px; /* Adjust the padding as needed */
+}
+
+select{
+  color: gray;
+
+}
+select:hover{
+text-decoration: underline; /* ظهور خط تحت النص عند التمرير */
+    color: #333; 
+}
+.change-password-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.change-password-form .form-row {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between label and input */
+}
+
+.change-password-form .form-label {
+  width: 150px; /* Fixed width for label alignment */
+}
+
+.change-password-form .form-control {
+  flex: 1;
+  max-width: 350px; 
+}
+
+.change-password-form .form-control-sm {
+  height: 30px;
+  font-size: 0.9rem;
+}
+
+.text-danger {
+  font-size: 0.85rem;
+  color: #dc3545; /* Bootstrap's danger color */
+  margin-top: 4px; /* Space between input and error message */
+}
+
+
+.borderless-card {
+  border: none;
+  box-shadow: none; 
+}
+.table thead th {
+  white-space: nowrap;  
+}
+.table tbody td {
+  white-space: nowrap;  
+}
+.table {
+  width: 100%; /* Ensure the table takes up full width */
+  overflow-x: auto; /* Enable horizontal scrolling for tables */
+  display: block; /* Allow horizontal scrolling on smaller screens */
+  white-space: nowrap; /* Prevent text wrapping in cells */
+}
+
+/* Fix for table headers */
+.table thead th {
+  white-space: nowrap; /* Prevent headers from wrapping */
+  text-align: left; /* Align text to the left for readability */
+}
+
+/* Adjust table rows and cells */
+.table tbody td {
+  white-space: nowrap; /* Prevent data in cells from wrapping */
+}
+
+/* Add padding for better readability */
+.table th, .table td {
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Responsive table container */
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  margin-bottom: 1rem; /* Add spacing below the table */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+
+
+  .table tbody tr {
+    display: block; /* Display each row as a block */
+    margin-bottom: 1rem; /* Add spacing between rows */
+  }
+
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd; /* Add a border for better readability */
+    padding: 0.5rem 0; /* Adjust padding */
+  }
+
+  .table tbody td::before {
+    content: attr(data-label); /* Use data-label attribute for headers */
+    font-weight: bold;
+    margin-right: 0.5rem; /* Add spacing between label and value */
+    text-transform: capitalize; /* Make labels more readable */
+  }
+}

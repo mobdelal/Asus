@@ -1,0 +1,331 @@
+<app-header></app-header>
+
+<!-- Subcategory Divs -->
+
+<nav
+  class="navbar navbar-expand-lg bg-body-tertiary"
+  [ngClass]="{ 'navbar-rtl': isRtl, 'navbar-ltr': !isRtl }"
+>
+  <div class="container-fluid {{ lang === 'ar' ? 'text-right' : 'text-left' }}">
+    <a class="navbar-brand" href="" routerLink="home">
+      <img
+        style="filter: brightness(0)"
+        src="https://dlcdnimgs.asus.com/images/logo/logo-blue001.svg"
+        alt="Logo"
+    /></a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      (click)="isCollapsed = !isCollapsed"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      [ngbCollapse]="isCollapsed"
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li
+          class="nav-item"
+          (mouseenter)="fetchSubCategories('Mobile')"
+          (mouseleave)="hideDropdown('Mobile')"
+          (click)="isMobile && toggleCategoryDropdown('Mobile')"
+        >
+          <a class="nav-link active" aria-current="page">{{
+            "navbar.mobile" | translate
+          }}</a>
+        </li>
+
+        <li
+          class="nav-item"
+          (mouseenter)="fetchSubCategories('Laptops')"
+          (mouseleave)="hideDropdown('Laptop')"
+          (click)="isMobile && toggleCategoryDropdown('Laptops')"
+        >
+          <a class="nav-link">{{ "navbar.laptops" | translate }}</a>
+        </li>
+
+        <li
+          class="nav-item"
+          (mouseenter)="fetchSubCategories('Displays / Desktops')"
+          (mouseleave)="hideDropdown('Displays / Desktops')"
+          (click)="isMobile && toggleCategoryDropdown('Displays / Desktops')"
+        >
+          <a class="nav-link" role="button">{{
+            "navbar.displays" | translate
+          }}</a>
+        </li>
+        <li
+          class="nav-item"
+          (mouseenter)="fetchSubCategories('Motherboards / Components')"
+          (mouseleave)="hideDropdown('Motherboards / Components')"
+          (click)="
+            isMobile && toggleCategoryDropdown('Motherboards / Components')
+          "
+        >
+          <a class="nav-link" role="button">{{
+            "navbar.motherboards" | translate
+          }}</a>
+        </li>
+
+        <li
+          class="nav-item"
+          (mouseenter)="fetchSubCategories('Networking / IoT / Servers')"
+          (mouseleave)="hideDropdown('Networking / IoT / Servers')"
+          (click)="
+            isMobile && toggleCategoryDropdown('Networking / IoT / Servers')
+          "
+        >
+          <a class="nav-link" role="button">{{
+            "navbar.networking" | translate
+          }}</a>
+        </li>
+
+        <li
+          class="nav-item"
+          (mouseenter)="fetchSubCategories('Accessories')"
+          (mouseleave)="hideDropdown('Accessories')"
+        >
+          <a class="nav-link" role="button">{{
+            "navbar.accessories" | translate
+          }}</a>
+        </li>
+      </ul>
+
+      <div class="language-selector .small-btn">
+        <button class="btn change" (click)="changeLang()">
+          {{ lang === "en" ? "Arabic" : "English" }}
+        </button>
+      </div>
+
+      <form class="d-flex" role="">
+        <div class="header-icons">
+          <!-- Search Icon -->
+          <button
+            class="btn btn-outline search"
+            type="button"
+            (click)="toggleSearch()"
+          >
+            <img
+              src="https://dlcdnimgs.asus.com/images/icon/header_search_light_hover.svg"
+              alt="Search Icon"
+            />
+          </button>
+
+          <!-- Cart Icon with Dropdown -->
+          <a
+            aria-label="Shopping Cart"
+            role="button"
+            (click)="toggleCartDropdown()"
+            class="cart"
+          >
+            <img
+              src="https://dlcdnimgs.asus.com/images/icon/header_cart_light_hover.svg"
+              alt="Cart Icon"
+            />
+            <span *ngIf="cartItems.length > 0" class="cart-count-badge">{{
+              getTotalQuantity()
+            }}</span>
+          </a>
+
+          <!-- Cart Dropdown -->
+          <div
+            [ngClass]="{ 'dropdown-rtl': isRtl, 'dropdown-ltr': !isRtl }"
+            *ngIf="cartDropdownOpen"
+            class="cart-dropdown"
+            (clickOutside)="closeCartDropdown()"
+            appMyCustomDirective
+          >
+            <div *ngIf="cartItems && cartItems.length > 0; else emptyCart">
+              <div class="cart-header">
+                <p>{{ "itemsInCart" | translate }} : {{ cartItems.length }}</p>
+              </div>
+              <!-- Cart Item List -->
+              <div
+                *ngFor="let item of cartItems; let i = index"
+                class="cart-item"
+              >
+                <p class="product-name">{{ item.product.name }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <img
+                    [src]="'https://asus-dashboard.runasp.net' + item.product.imageURLs[0]"
+                    class="product-image"
+                    alt="Product image"
+                  />
+                  <p
+                    class="product-price"
+                    *ngIf="item.product.priceAfterDiscount"
+                  >
+                    {{ item.product.priceAfterDiscount | number : "1.2-2" }}
+                    {{ "EGP" | translate }}
+                  </p>
+                  <p
+                    class="product-price"
+                    *ngIf="!item.product.priceAfterDiscount"
+                  >
+                    {{ item.product.price | number : "1.2-2" }}
+                    {{ "EGP" | translate }}
+                  </p>
+                  <!-- Remove Button for Each Item -->
+                  <button
+                    type="button"
+                    class="btn-minus"
+                    aria-label="Close"
+                    (click)="removeFromCart(i)"
+                  ></button>
+                </div>
+                <p class="product-quantity">X {{ item.quantity }}</p>
+              </div>
+
+              <!-- Cart Total Section -->
+              <div class="cart-total">
+                <p>
+                  {{ "cartSubtotal" | translate }} :
+                  {{ getTotalPrice() | number : "1.2-2" }}
+                  {{ "EGP" | translate }}
+                </p>
+              </div>
+              <a class="checkout-button btn btn-primary" routerLink="/checkout">
+                {{ "Checkout" | translate }}
+              </a>
+            </div>
+
+            <!-- Empty Cart Template -->
+            <ng-template #emptyCart>
+              <p>{{ "cart.empty" | translate }}</p>
+            </ng-template>
+          </div>
+
+          <!-- User Icon with Dropdown -->
+          <!-- <div (appClickOutside)="cartDropdownOpen = false"> -->
+
+          <a
+            class="btn btn-outline user"
+            type="button"
+            id="userDropdownMenu"
+            aria-expanded="false"
+            (click)="toggleDropdown()"
+          >
+            <img
+              src="https://dlcdnimgs.asus.com/images/icon/header_logout_light_hover.svg"
+              alt="User Icon"
+              class="user-icon"
+            />
+            <div *ngIf="isUserSignedIn" class="green-dot"></div>
+          </a>
+          <ul
+            class="dropdown-menu"
+            [ngClass]="{
+              show: dropdownOpen,
+              'dropdown-rtl': isRtl,
+              'dropdown-ltr': !isRtl,
+              'text-rtl': isRtl
+            }"
+            (clickOutside)="closeDropdown()"
+            class="dropdown-menu"
+            aria-labelledby="userDropdownMenu"
+          >
+            <li *ngIf="!isUserSignedIn">
+              <a
+                class="dropdown-item"
+                href="#"
+                routerLink="login"
+                (click)="closeDropdown()"
+              >
+                {{ "menu.login" | translate }}
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/sign-up/profile"
+                (click)="closeDropdown()"
+              >
+                {{ "menu.myAccount" | translate }}
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/sign-up/profile"
+                [fragment]="'orderStatus'"
+                (click)="closeDropdown()"
+                >{{ "menu.viewOrder" | translate }}</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/sign-up/profile"
+                [fragment]="'wishlist'"
+                (click)="closeDropdown()"
+              >
+                {{ "menu.myWishlist" | translate }}
+              </a>
+            </li>
+            <li *ngIf="isUserSignedIn">
+              <a
+                class="dropdown-item"
+                href="#"
+                (click)="logout(); closeDropdown()"
+              >
+                {{ "menu.signOut" | translate }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div
+  *ngIf="currentCategory && isDropdownVisible[currentCategory]"
+  class="subcategory-dropdown"
+  [ngStyle]="{ 'padding-left': isRtl ? '0' : '40px', 'padding-right': isRtl ? '40px' : '0' }"
+
+  (mouseenter)="setMouseOver(currentCategory, true)"
+  (mouseleave)="setMouseOver(currentCategory, false)"
+>
+  <ul>
+    <li
+      *ngFor="let subCategory of subCategories[currentCategory]"
+      (click)="filterProductsBySubCategory(subCategory.id)"
+      class="ms-3"
+    >
+      {{ lang === "ar" ? subCategory.name : subCategory.name_EN }}
+    </li>
+  </ul>
+</div>
+<div
+  *ngIf="searchActive"
+  class="search-dropdown"
+  appMyCustomDirective
+  (clickOutside)="closeSearch()"
+>
+  <div class="input-group">
+    <input
+      #searchInput
+      type="text"
+      placeholder="Search Asus.com"
+      class="form-control"
+    />
+    <button
+      class="btn btn-primary ms-2"
+      (click)="performSearch(searchInput.value)"
+      [ngStyle]="{ 'margin-left': isRtl ? '0' : '10px', 'margin-right': isRtl ? '10px' : '0' }"
+
+    >
+      {{ "Search" | translate }}
+    </button>
+  </div>
+
+  <div *ngIf="noResults" class="no-results-message">No results found.</div>
+</div>

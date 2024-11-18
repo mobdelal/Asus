@@ -1,0 +1,138 @@
+<!-- login.component.html -->
+
+<app-mini-nav></app-mini-nav>
+<div class="login-container" [dir]="direction">
+  <div class="info-section">
+    <img
+      src="https://account.asus.com/img/login_img02.png"
+      alt="{{ 'LOGIN.ILLUSTRATION_ALT' | translate }}"
+      class="illustration"
+    />
+    <h2>{{ "LOGIN.TITLE" | translate }}</h2>
+    <p>{{ "LOGIN.DESCRIPTION" | translate }}</p>
+
+    <ul class="icon-list">
+      <li>
+        <img src="https://account.asus.com/img/login_icon_01.svg" alt="Icon" />
+        {{ "LOGIN.FEATURES.WARRANTY" | translate }}
+      </li>
+      <li>
+        <img src="https://account.asus.com/img/login_icon_02.svg" alt="Icon" />
+        {{ "LOGIN.FEATURES.DOWNLOADS" | translate }}
+      </li>
+      <li>
+        <img src="https://account.asus.com/img/login_icon_03.svg" alt="Icon" />
+        {{ "LOGIN.FEATURES.SUPPORT" | translate }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="form-section">
+    <h2>{{ "LOGIN.FORM.TITLE" | translate }}</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <div class="form-group">
+        <label for="email">{{ "LOGIN.FORM.EMAIL_LABEL" | translate }}</label>
+        <input
+          type="email"
+          id="email"
+          name="userNameOrEmail"
+          placeholder="{{ 'LOGIN.FORM.EMAIL_PLACEHOLDER' | translate }}"
+          class="form-control"
+          required
+          [(ngModel)]="user.userNameOrEmail"
+          #emailInp="ngModel"
+          aria-describedby="emailHelp"
+          pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$"
+        />
+
+        <div *ngIf="emailInp.invalid && emailInp.touched">
+          <p *ngIf="emailInp.hasError('required')" class="text-danger">
+            {{ "LOGIN.FORM.EMAIL_REQUIRED" | translate }}
+          </p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">{{
+          "LOGIN.FORM.PASSWORD_LABEL" | translate
+        }}</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="{{ 'LOGIN.FORM.PASSWORD_PLACEHOLDER' | translate }}"
+          class="form-control"
+          required
+          [(ngModel)]="user.password"
+          #passwordInp="ngModel"
+        />
+        <div *ngIf="passwordInp.invalid && passwordInp.touched">
+          <p *ngIf="passwordInp.errors?.['required']" class="text-danger">
+            {{ "LOGIN.FORM.PASSWORD_REQUIRED" | translate }}
+          </p>
+        </div>
+        <a href="#" class="forgot-password">{{
+          "LOGIN.FORM.FORGOT_PASSWORD" | translate
+        }}</a>
+      </div>
+
+      <div *ngIf="errorMessage" class="text-danger">
+        {{ "LOGIN.FORM.ERROR_MESSAGE" | translate }}
+      </div>
+
+      <div class="form-group">
+        <input
+          type="checkbox"
+          id="remember-me"
+          name="rememberMe"
+          [(ngModel)]="user.rememberMe"
+        />
+        <label for="remember-me" class="rememberMe">{{
+          "LOGIN.FORM.REMEMBER_ME" | translate
+        }}</label>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+      >
+        {{ "LOGIN.FORM.SUBMIT_BUTTON" | translate }}
+      </button>
+    </form>
+
+    <p>
+      {{ "LOGIN.NO_ACCOUNT_PROMPT" | translate }}
+      <a routerLink="/sign-up">{{ "LOGIN.SIGN_UP_LINK" | translate }}</a>
+    </p>
+    <br /><br />
+
+    <!-- <div class="social-login">
+      <span>{{ "LOGIN.SOCIAL_LOGIN" | translate }}</span>
+      <div class="social-icons">
+        <a href="#"
+          ><img
+            src="https://account.asus.com/img/openid/icon_fb.svg"
+            alt="{{ 'LOGIN.SOCIAL.FACEBOOK' | translate }}"
+        /></a>
+        <a href="#"
+          ><img
+            src="https://account.asus.com/img/openid/icon_google.svg"
+            alt="{{ 'LOGIN.SOCIAL.GOOGLE' | translate }}"
+        /></a>
+        <a href="#"
+          ><img
+            src="https://account.asus.com/img/openid/icon_apple.svg"
+            alt="{{ 'LOGIN.SOCIAL.APPLE' | translate }}"
+        /></a>
+        <a href="#"
+          ><img
+            src="https://account.asus.com/img/openid/icon_microsoft.svg"
+            alt="{{ 'LOGIN.SOCIAL.MICROSOFT' | translate }}"
+        /></a>
+      </div>
+    </div> -->
+  </div>
+</div>
+<br /><br /><br /><br /><br /><br /><br />
+
+<app-mini-footer></app-mini-footer>

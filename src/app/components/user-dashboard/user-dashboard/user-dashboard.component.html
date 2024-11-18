@@ -1,0 +1,477 @@
+<!-- <p>user-dashboard works!</p> -->
+
+<!-- <app-navbar></app-navbar> -->
+<!-- <app-mini-nav></app-mini-nav> -->
+<div [dir]="lang == 'en' ? 'ltr' : 'rtl'" class="container">
+  <aside class="sidebar">
+    <h3 class="sidebar-title">
+      {{ "userDash.account" | translate }} |
+      {{ "userDash.welcome" | translate }}, {{ LoggedUser.userName }}
+    </h3>
+    <ul class="mt-5">
+      <div class="menu-section">
+        <li (click)="toggleAccountSettings()" class="d-flex align-items-center">
+          <i class="bi bi-gear"></i>
+          <a class="m-3">{{ "userDash.accountSettings" | translate }}</a>
+          <i
+            [ngClass]="{
+              'bi-caret-down': showAccountSettingsOptions,
+              'bi-caret-right': !showAccountSettingsOptions
+            }"
+            class="ms-2"
+          ></i>
+        </li>
+        <!-- Sub-menu options for Account Settings -->
+        <ul
+          *ngIf="showAccountSettingsOptions"
+          [class.open]="showAccountSettingsOptions"
+          class="submenu"
+        >
+          <li class="option" (click)="selectOption('profile')">
+            {{ "userDash.myProfile" | translate }}
+          </li>
+          <li class="option" (click)="selectOption('change-password')">
+            {{ "userDash.changePassword" | translate }}
+          </li>
+        </ul>
+      </div>
+
+      <hr />
+      <li (click)="selectOption('orderStatus')">
+        <i class="bi bi-calendar2-check-fill"></i>
+        <a class="m-3">{{ "userDash.orderStatus" | translate }}</a>
+      </li>
+      <li (click)="selectOption('wishlist')">
+        <i class="bi bi-calendar2-heart-fill"></i>
+        <a class="m-3">{{ "userDash.wishlist" | translate }}</a>
+      </li>
+
+      <hr />
+      <li (click)="selectOption('contacts')">
+        <i class="bi bi-person-rolodex"></i>
+        <a class="m-3">{{ "userDash.contacts" | translate }}</a>
+      </li>
+    </ul>
+  </aside>
+
+  <div class="cards-container">
+    <div
+      class="card"
+      *ngIf="selectedOption === 'Account Settings'"
+      style="height: 115remx"
+    >
+      <h3>{{ "userDash.accountSettings" | translate }}</h3>
+      <p>{{ "userDash.accountSettings" | translate }}</p>
+    </div>
+
+    <div
+      class="card borderless-card"
+      *ngIf="selectedOption === 'change-password'"
+    >
+      <h3>{{ "userDash.changePassword" | translate }}</h3>
+      <p>{{ "userDash.changePassworddescription" | translate }}</p>
+
+      <hr />
+
+      <!-- <div *ngIf="successMessage" class="alert alert-success" role="alert">
+        {{ successMessage }}
+      </div> -->
+      <form
+        [formGroup]="changePasswordForm"
+        (ngSubmit)="onChangePassword()"
+        class="change-password-form"
+      >
+        <div class="form-group">
+          <div class="form-row">
+            <label for="oldPassword" class="form-label"
+              >{{ "changePasswordForm.labels.oldPassword" | translate }}
+            </label>
+            <input
+              type="password"
+              id="oldPassword"
+              class="form-control form-control-sm"
+              formControlName="oldPassword"
+              required
+            />
+          </div>
+          <div
+            *ngIf="oldPassword?.invalid && oldPassword?.touched"
+            class="text-danger"
+          >
+            <span *ngIf="oldPassword?.errors?.['required']">
+              {{
+                "changePasswordForm.errors.oldPasswordRequired" | translate
+              }}</span
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-row">
+            <label for="newPassword" class="form-label">
+              {{ "changePasswordForm.labels.newPassword" | translate }}</label
+            >
+            <input
+              type="password"
+              id="newPassword"
+              class="form-control form-control-sm"
+              formControlName="newPassword"
+              required
+            />
+          </div>
+          <div
+            *ngIf="newPassword?.invalid && newPassword?.touched"
+            class="text-danger"
+          >
+            <span
+              *ngIf="newPassword?.errors?.['required']"
+              [dir]="lang == 'en' ? 'ltr' : 'rtl'"
+            >
+              {{
+                "changePasswordForm.errors.newPasswordRequired" | translate
+              }}</span
+            >
+            <span *ngIf="newPassword?.errors?.['minlength']">{{
+              "changePasswordForm.errors.newPasswordMinLength" | translate
+            }}</span>
+            <span *ngIf="newPassword?.errors?.['passwordStrength']">
+              {{ "changePasswordForm.errors.newPasswordStrength" | translate }}
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-row">
+            <label for="confirmPassword" class="form-label">
+              {{ "changePasswordForm.labels.confirmPassword" | translate }}
+            </label>
+            <input
+              type="password"
+              id="confirmPassword"
+              class="form-control form-control-sm"
+              formControlName="confirmPassword"
+              required
+            />
+          </div>
+          <div
+            *ngIf="confirmPassword?.invalid && confirmPassword?.touched"
+            class="text-danger"
+          >
+            <span *ngIf="confirmPassword?.errors?.['required']">
+              {{
+                "changePasswordForm.errors.confirmPasswordRequired" | translate
+              }}</span
+            >
+          </div>
+          <div
+            *ngIf="
+              confirmPassword?.touched &&
+              confirmPassword?.value !== newPassword?.value
+            "
+            class="text-danger"
+          >
+            {{ "changePasswordForm.errors.passwordMismatch" | translate }}
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary mt-3"
+          [disabled]="changePasswordForm.invalid"
+        >
+          {{ "changePasswordForm.buttons.save" | translate }}
+        </button>
+      </form>
+      <!-- <div *ngIf="successMessage || errorMessage" class="mt-3">
+        <div *ngIf="successMessage" class="alert alert-success" role="alert">
+          {{ successMessage }}
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+          {{ errorMessage }}
+        </div>
+      </div> -->
+    </div>
+
+    <div class="card borderless-card" *ngIf="selectedOption === 'profile'">
+      <h3>{{ "profile.title" | translate }}</h3>
+
+      <hr />
+
+      <!-- <div *ngIf="successMessage" class="alert alert-success" role="alert">
+        {{ successMessage }}
+      </div> -->
+      <form class="row g-3" [formGroup]="personalform" (ngSubmit)="onSubmit()">
+        <div class="col-lg-6 col-md-12 col-12">
+          <label for="inputF-Name" class="form-label">{{
+            "profile.firstName" | translate
+          }}</label>
+          <input
+            type="text"
+            formControlName="firstName"
+            class="form-control"
+            id="inputF-Name"
+            placeholder="first name"
+            [value]="LoggedUser.firstName"
+          />
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+          <label for="inputL-Name" class="form-label">{{
+            "profile.lastName" | translate
+          }}</label>
+          <input
+            type="text"
+            formControlName="lastName"
+            class="form-control"
+            id="inputL-Name"
+            placeholder="Last name"
+          />
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-12">
+          <label for="inputN-Name" class="form-label">{{
+            "profile.nickName" | translate
+          }}</label>
+          <input
+            type="text"
+            formControlName="nickName"
+            class="form-control"
+            id="inputN-Name"
+            placeholder="nick name"
+          />
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-12">
+          <label class="form-label">{{ "profile.gender" | translate }}</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              [value]="'Male'"
+              formControlName="gender"
+            />
+            <label class="form-check-label">{{
+              "profile.genderMale" | translate
+            }}</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              [value]="'Female'"
+              formControlName="gender"
+            />
+            <label class="form-check-label">{{
+              "profile.genderFemale" | translate
+            }}</label>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-12">
+          <label for="inputAdd" class="form-label">{{
+            "profile.address" | translate
+          }}</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputAdd"
+            placeholder="Address"
+            formControlName="address"
+          />
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-12">
+          <label for="inputCity" class="form-label">{{
+            "profile.city" | translate
+          }}</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCity"
+            formControlName="city"
+          />
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-12">
+          <label for="dob">{{ "profile.dateOfBirth" | translate }}</label>
+          <div formGroupName="dob" class="d-flex">
+            <select class="form-control me-2" formControlName="year">
+              <option value="" disabled selected hidden>
+                {{ "profile.dobYear" | translate }}
+              </option>
+              <option *ngFor="let year of years" [value]="year">
+                {{ year }}
+              </option>
+            </select>
+
+            <select class="form-control me-2" formControlName="month">
+              <option value="" disabled selected hidden>
+                {{ "profile.dobMonth" | translate }}
+              </option>
+              <option *ngFor="let month of months; index as i" [value]="i + 1">
+                {{ month }}
+              </option>
+            </select>
+
+            <select class="form-control" formControlName="day">
+              <option value="" disabled selected hidden>
+                {{ "profile.dobDay" | translate }}
+              </option>
+              <option *ngFor="let day of days" [value]="day">{{ day }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-12" style="text-align: center">
+          <button type="submit" class="btn btn-primary col-6">
+            {{ "profile.submit" | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div
+      id="orderStatus-section"
+      class="card borderless-card"
+      *ngIf="selectedOption === 'orderStatus'"
+    >
+      <h3>{{ "orders.title" | translate }}</h3>
+      <hr />
+      <table class="table customTable" *ngIf="!selectedOrder">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">{{ "orders.orderNumber" | translate }}</th>
+            <th scope="col">{{ "orders.date" | translate }}</th>
+            <th scope="col">{{ "orders.shippingTo" | translate }}</th>
+            <th scope="col">{{ "orders.totalAmount" | translate }}</th>
+            <th scope="col">{{ "orders.state" | translate }}</th>
+            <th scope="col">{{ "orders.details" | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td>{{ order.code }}</td>
+            <td>{{ order.orderDate | date : "shortDate" }}</td>
+            <td>{{ LoggedUser.firstName }} {{ LoggedUser.lastName }}</td>
+            <td>{{ order.totalAmount | currency }}</td>
+            <td>
+              {{ lang === "ar" ? order.orderStateArabic : order.orderState }}
+            </td>
+
+            <!-- {{ lang === "ar" ? subCategory.name : subCategory.name_EN }} -->
+
+            <td>
+              <button class="btn" (click)="toggleDetails(order)">
+                {{ "orders.viewDetails" | translate }}
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="selectedOrder">
+        <a (click)="clearSelectedOrder()">{{
+          "orders.backToOrders" | translate
+        }}</a>
+        <h4>
+          {{ "orders.orderNumber" | translate }} #{{ selectedOrder.code }}
+        </h4>
+        <table class="table customTable">
+          <thead>
+            <tr>
+              <th scope="col">{{ "orders.productImage" | translate }}</th>
+              <th scope="col">{{ "orders.productName" | translate }}</th>
+              <th scope="col">{{ "orders.quantity" | translate }}</th>
+              <th scope="col">{{ "orders.price" | translate }}</th>
+              <th scope="col">{{ "orders.total" | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of selectedOrder.orderItems">
+              <td *ngIf="productDetails[item.id]">
+                <img
+                  [src]="
+                    'https://asus-dashboard.runasp.net' +
+                    productDetails[item.id].imageURLs[0]
+                  "
+                  width="50"
+                  height="50"
+                />
+              </td>
+              <td *ngIf="productDetails[item.id]">
+                {{ productDetails[item.id].name_EN }}
+              </td>
+              <td *ngIf="!productDetails[item.id]">
+                {{ "orders.productNotFound" | translate }}
+              </td>
+              <td>{{ item.quantity }}</td>
+              <td>{{ item.price | currency }}</td>
+              <td>{{ item.price * item.quantity | currency }}</td>
+            </tr>
+          </tbody>
+          <br /><br /><br />
+          <tfoot>
+            <tr>
+              <td colspan="3" class="text-right">
+                <strong>{{ "orders.subTotal" | translate }}:</strong>
+              </td>
+              <td>{{ totalAmount | currency }}</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="text-right">
+                {{ "orders.totalShippingCost" | translate }}:
+              </td>
+              <td>{{ totalShippingCost | currency }}</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="text-right">
+                <strong>{{ "orders.BigTotal" | translate }}:</strong>
+              </td>
+              <td>{{ subTotal | currency }}</td>
+            </tr>
+          </tfoot>
+        </table>
+        <br /><br />
+        <h4>{{ "orders.orderInformation" | translate }}</h4>
+        <table class="table customTable">
+          <thead>
+            <tr>
+              <th scope="col">{{ "orders.shippingAddress" | translate }}</th>
+              <th scope="col">{{ "orders.shippingMethod" | translate }}</th>
+              <th scope="col">{{ "orders.paymentMethod" | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p>{{ selectedOrder.shippingAddress }}</p>
+                <p>T: {{ selectedOrder.trackingNumber }}</p>
+              </td>
+              <td>{{ selectedOrder.shippingMethod }}</td>
+              <td>{{ selectedOrder.paymentMethod }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div
+      id="wishlist-section"
+      class="card borderless-card"
+      *ngIf="selectedOption === 'wishlist'"
+    >
+      <h3>{{ "userDash.wishlist" | translate }}</h3>
+      <app-wishlist></app-wishlist>
+    </div>
+
+    <div class="card" *ngIf="selectedOption === 'contacts'">
+      <h3>{{ "contacts.title" | translate }}</h3>
+      <p>{{ "contacts.description" | translate }}</p>
+    </div>
+  </div>
+</div>
+
+<br /><br />
+
+<!-- <app-sticky-footer></app-sticky-footer> -->
+<!-- <app-mini-footer></app-mini-footer> -->

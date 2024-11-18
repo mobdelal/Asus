@@ -1,0 +1,63 @@
+<aside class="sidebar" [ngClass]="{ rtl: lang === 'ar' }">
+  <div class="sortAndFilter">
+    <span class="toggle-icon">{{ "filters.sortAndFilter" | translate }}</span>
+    <span class="clear-all" (click)="clearAllSelectedValues()">{{
+      "filters.clearAll" | translate
+    }}</span>
+    <hr />
+    <div class="selected">
+      <span
+        *ngFor="let selectedValue of selectedValues"
+        class="badge rounded-pill text-bg-light"
+      >
+        {{ selectedValue }}
+        <span class="remove-icon" (click)="removeSelectedValue(selectedValue)">
+          {{ "filters.remove" | translate }}
+        </span>
+      </span>
+    </div>
+  </div>
+
+  <div *ngFor="let specification of specifications">
+    <div class="section-header" (click)="toggleSection(specification.id)">
+      {{ lang === "ar" ? specification.key_Ar : specification.key }}
+      <span class="toggle-icon plus"
+      [ngStyle]="{
+        'margin-left': lang === 'en' ? '8px' : '0',
+        'margin-right': lang === 'ar' ? '8px' : '0'
+      }">
+        {{ openSections[specification.id] ? "-" : "+" }}
+      </span>
+    </div>
+
+    <div
+      class="content"
+      *ngIf="specification.values && specification.values.length > 0"
+      [@expandCollapse]="getSectionState(specification.id)"
+    >
+      <ul>
+        <li *ngFor="let value of specification.values">
+          <input
+            style="transform: scale(1.2)"
+            type="checkbox"
+            [id]="'checkbox' + specification.id + '-' + value"
+            (change)="onSpecificationValueChange($event, value)"
+          />
+          <label
+            [attr.for]="'checkbox' + specification.id + '-' + value"
+            class="val"
+          >
+            {{ value }}
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <span class="clear-all ex" (click)="toggleAllSections()">
+    {{
+      (areAllSectionsExpanded ? "filters.collapseAll" : "filters.expandAll")
+        | translate
+    }}
+  </span>
+</aside>

@@ -1,0 +1,28 @@
+.container {
+    overflow: hidden; /* Hides overflow when image scales up */
+    max-width: 100%; /* Ensures container width is responsive */
+    padding: 0%;
+  }
+  
+  .responsive-img {
+    width: 100%; /* Makes image take full width of container */
+    height: auto; /* Keeps image aspect ratio */
+    
+  }
+  
+  /* .responsive-img:hover {
+    transform: scale(1.1); 
+  }
+   */
+
+   .imges{
+    height: 698px;
+    /* width: 20px; */
+    object-fit: cover;
+    width: 100%;
+
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    font-size: 100% !important;
+
+   }

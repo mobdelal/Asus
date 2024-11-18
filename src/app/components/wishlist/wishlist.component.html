@@ -1,0 +1,45 @@
+<!-- <h1>works</h1> -->
+<div class="container-fluid my-4">
+  <!-- Wishlist Content -->
+  <div class="col-md-12">
+    <!-- <h3 class="mb-3">My Wishlist</h3> -->
+    <p>{{ wishlistItems.length }} Item(s)</p>
+    <div class="row">
+      <div *ngFor="let item of wishlistItems" class="col-md-4 mb-4">
+        <div class="card h-100 text-center">
+          <img
+            [src]="'https://asus-dashboard.runasp.net' + item.imageURLs[0]"
+            class="card-img-top"
+            alt="Product Image"
+          />
+          <div class="card-body">
+            <h6>{{ item.name_EN }}</h6>
+            <p class="text-muted">
+              {{
+                item.priceAfterDiscount && item.priceAfterDiscount < item.price
+                  ? (item.priceAfterDiscount | number : "1.2-2")
+                  : (item.price | number : "1.2-2")
+              }}
+              EGP
+            </p>
+            <button
+              class="btn btn-primary btn-sm"
+              (click)="goToProductDetails(item.id)"
+            >
+              {{ "Show More" | translate }}
+            </button>
+            <!-- <p class="mt-2 text-muted">Added Date: {{ date.now}}</p> -->
+            <br />
+            <button
+              class="btn btn-link text-danger p-0"
+              (click)="removeFromWishlist(item)"
+            >
+              {{ "remove" | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->

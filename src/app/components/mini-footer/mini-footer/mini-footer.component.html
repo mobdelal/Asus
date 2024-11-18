@@ -1,0 +1,39 @@
+<!-- <p>mini-footer works!</p> -->
+
+
+<!-- <p>header works!</p> -->
+<!-- <footer class="">
+
+
+<div class="text-lef" >
+
+    <p>©ASUSTeK Computer Inc. All rights reserved. | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
+
+    <button class="btn" (click)="changeLang()">
+      {{lang === 'en' ? "Arabic":"English"}}
+    </button>
+    
+  </div>
+</footer>
+
+   -->
+
+
+<footer>
+  <div class="footer-content">
+    <p>{{ 'footer.allRightsReserved' | translate }}</p>
+  <ul>
+    <li><a href="#">{{ 'footer.termsOfUse' | translate }}</a></li>
+    <li><a href="#">{{ 'footer.privacyPolicy' | translate }}</a></li>
+    <li><a href="#">{{ 'footer.exportControl' | translate }}</a></li>
+  </ul>
+    <div class="language-selector">
+      <button class="btn" (click)="changeLang()">
+        {{lang === 'en' ? "Arabic":"English"}}
+      </button>
+    </div>
+  </div>
+</footer>
+
+
+

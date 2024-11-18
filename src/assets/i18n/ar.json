@@ -1,0 +1,373 @@
+{
+  "footer": {
+
+    "text1": "الهواتف المحمولة",
+    "mobile": "الهواتف المحمولة",
+    "phone": "الهواتف",
+    "acc": "الإكسسوارات",
+    "lap": "الحواسيب المحمولة",
+    "home": "للمنزل",
+    "work": "للعمل",
+    "creators": "للمبدعين",
+    "students": "للطلاب",
+    "gaming": "للألعاب",
+    "Displays":"شاشات / أجهزة سطح المكتب",
+    "monitors": "شاشات",
+    "allInOnePCs": "أجهزة الكل في واحد",
+    "miniPCs": "أجهزة كمبيوتر صغيرة",
+    "projectors": "أجهزة عرض",
+    "towerPCs": "أجهزة كمبيوتر سطح المكتب",
+    "gamingTowerPCs": "أجهزة كمبيوتر الألعاب",
+    "nucs": "NUCs",
+    "workstations": "محطات العمل",
+    "accessories": "ملحقات",
+    "motherboardsComponents": "لوحات الأم / المكونات",
+    "motherboards": "لوحات الأم",
+    "graphicsCards": "بطاقات الرسومات",
+    "cases": "صناديق",
+    "cooling": "التبريد",
+    "powerSupplyUnits": "وحدات تزويد الطاقة",
+    "soundCards": "بطاقات الصوت",
+    "opticalDrives": "محركات الأقراص الضوئية",
+    "dataStorage": "تخزين البيانات",
+    "externalGraphicsDocks": "محطات الرسومات الخارجية",
+    "networkingIoTServers": "الشبكات / إنترنت الأشياء / الخوادم",
+    "wifi7": "واي فاي 7",
+    "wifi6": "واي فاي 6",
+    "wifiRouters": "أجهزة التوجيه واي فاي",
+    "wholeHomeMeshWiFiSystem": "نظام شبكة واي فاي شامل للمنزل",
+    "businessNetworkSolutions": "حلول شبكة الأعمال",
+    "Wired Networking": "شبكات سلكية",
+    "Intelligent Robots": "روبوتات ذكية",
+    "AIoT & Industrial Solutions": "حلول الذكاء الاصطناعي وإنترنت الأشياء والصناعة",
+    "Servers": "خوادم",
+    "Smart Home": "المنزل الذكي",
+    "Accessories": "ملحقات",
+    "Keyboards": "لوحات مفاتيح",
+    "Mice and Mouse Pads": "ماوسات ومساند الماوس",
+    "Headsets and Audio": "سماعات الرأس والأجهزة الصوتية",
+    "Streaming Kits": "معدات البث المباشر",
+    "Apparel Bags and Gear": "الملابس والحقائب والمعدات",
+    "Cases and Protection": "الأغطية والحماية",
+    "Adapters and Chargers": "محولات وشواحن",
+    "Docks Dongles and Cable": "أرصفة وأجهزة التوصيل والكابلات",
+    "Power Banks": "بنوك الطاقة",
+    "Controller": "جهاز تحكم",
+    "Gimbal": "جيمبال",
+    "learnMore": "تعرف أكثر",
+    "aiPc": "أجهزة الكمبيوتر المدعومة بالذكاء الاصطناعي",
+    "advancedAiPcs": "أجهزة الكمبيوتر المتقدمة المدعومة بالذكاء الاصطناعي",
+    "asusDesignCenter": "مركز تصميم ASUS",
+    "asuspro": "ASUSPRO",
+    "automotiveSolutions": "حلول السيارات",
+    "avcLicensingNotice": "إشعار ترخيص AVC",
+    "asusBlog": "مدونة ASUS",
+    "armouryCrate": "صندوق الأسلحة",
+    "aura": "Aura",
+    "allRightsReserved": "  جميع الحقوق محفوظة © ASUSTeK Computer Inc.",
+    "termsOfUse": "إشعار شروط الاستخدام",
+    "privacyPolicy": "سياسة الخصوصية",
+    "exportControl": "التحكم في الصادرات والامتثال للعقوبات"
+  },
+
+
+  "itemsInCart": "عدد المنتجات في سلة المشتريات",
+  "cartSubtotal": "إجمالي السلة",
+  "Checkout":"ادفع",
+  "EGP":"جنيه",
+
+  "cart": {
+    "empty": "السلة فارغة"
+  },
+  "menu": {
+    "login": "تسجيل الدخول",
+    "myAccount": "حسابي",
+    "viewOrder": "عرض طلبي",
+    "myWishlist": "قائمة المفضلة",
+    "signOut": "تسجيل الخروج"
+  },
+  
+
+
+    "aboutUs": {
+      "heading": "من نحن",
+      "aboutAsus": "عن ASUS",
+      "news": "الأخبار",
+      "investorRelations": "علاقات المستثمرين",
+      "pressRoom": "غرفة الأخبار",
+        "asustor": "شركة ASUSTOR",
+        "asusCloud": "شركة ASUS Cloud",
+        "unimax": "شركة UniMax للإلكترونيات"
+      
+    
+    },
+
+      "support": {
+        "heading": "الدعم",
+        "repairStatus": "تحقق من حالة الإصلاح",
+        "serviceLocations": "البحث عن مواقع الخدمة",
+        "productRegistration": "تسجيل المنتج",
+        "emailUs": "راسلنا عبر البريد الإلكتروني",
+        "callUs": "اتصل بنا",
+        "securityAdvisory": "التنبيهات الأمنية",
+        "supportVideos": "فيديوهات دعم ASUS"
+      
+    }
+    ,
+    "sustainability": {
+    "heading": "الاستدامة",
+    "esg": "الحوكمة البيئية والاجتماعية",
+    "environment": "البيئة"
+  },
+
+  "navbar": {
+    "gaming": "الألعاب",
+    "Commercial products":"المنتجات التجارية",
+    "business": "الأعمال",
+    "environment": "البيئة",
+    "support": "الدعم",
+    "mobile": "الهواتف المحمولة / الأجهزة المحمولة",
+    "laptops": "لابتوب",
+    "displays": "كمبيوتر شاشات",
+    "motherboards": "اللوحات الأم / المكونات",
+    "networking": "الشبكات / إنترنت الأشياء / الخوادم",
+    "accessories": "إكسسوارات"
+  },
+    "LOGIN": {
+      "ILLUSTRATION_ALT": "رسم توضيحي",
+      "TITLE": "حساب واحد لجميع خدمات ASUS",
+      "DESCRIPTION": "سجل الدخول إلى حسابك لدى ASUS للوصول إلى كل ما تحتاج إليه عبر بوابة واحدة!",
+      "FEATURES": {
+        "WARRANTY": "إدارة ضمانات منتجاتك من ASUS",
+        "DOWNLOADS": "تنزيل برامج التشغيل والبرامج لمنتجاتك",
+        "SUPPORT": "الحصول على الدعم الفني وتتبع حالة إصلاح المنتجات"
+      },
+      "FORM": {
+        "TITLE": "تسجيل الدخول إلى الحساب",
+        "EMAIL_LABEL": "الحساب",
+        "EMAIL_PLACEHOLDER": "يرجى إدخال بريدك الإلكتروني",
+        "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب.",
+        "PASSWORD_LABEL": "كلمة المرور",
+        "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور الخاصة بك",
+        "PASSWORD_REQUIRED": "كلمة المرور مطلوبة.",
+        "REMEMBER_ME": "تذكر بيانات الدخول",
+        "FORGOT_PASSWORD": "هل نسيت كلمة المرور؟",
+        "SUBMIT_BUTTON": "تسجيل الدخول",
+        "ERROR_MESSAGE": "يرجى التحقق من البريد الإلكتروني وكلمة المرور."
+      },
+      "NO_ACCOUNT_PROMPT": "ليس لديك حساب ASUS؟",
+      "SIGN_UP_LINK": "التسجيل الان",
+      "SOCIAL_LOGIN": "أو تسجيل الدخول باستخدام",
+      "SOCIAL": {
+        "FACEBOOK": "فيسبوك",
+        "GOOGLE": "جوجل",
+        "APPLE": "آبل",
+        "MICROSOFT": "مايكروسوفت"
+      }
+    },
+    "register": {
+      "SIGN_UP_NOW": "اشترك الآن",
+      "NOTE": "يرجى ملاحظة أن حساب ASUS هو نفس حساب ROG. إذا كان لديك أي حساب منهم، يمكنك تسجيل الدخول بشكل مباشر بدون تسجيل حساب جديد.",
+      "LOGIN": "تسجيل الدخول",
+      "SIGN_UP_WITH": "سجل باستخدام",
+      "OR_SIGN_IN_WITH": "أو سجل الدخول باستخدام",
+      "ACCOUNT": "الحساب",
+      "ACCOUNT_REQUIRED": "يرجى إدخال بريدك الإلكتروني",
+      "ACCOUNT_IS_REQUIRED": "الحساب مطلوب.",
+      "EMAIL_VALID": "أدخل بريدًا إلكترونيًا صالحًا.",
+      "PASSWORD": "كلمة المرور",
+      "PASSWORD_REQUIRED": "كلمة المرور الجديدة مطلوبة.",
+      "PASSWORD_MINLENGTH": "يجب أن تكون كلمة المرور الجديدة مكونة من 6 أحرف على الأقل.",
+      "PASSWORD_STRENGTH": "يجب أن تحتوي كلمة المرور الجديدة على حرف كبير واحد على الأقل ورمز خاص واحد.",
+      "PASSWORD_GUIDE": "تركيبة من 8~25 حرفًا (حروف كبيرة/صغيرة) وأرقام ورموز دون فراغ.",
+      "RE_ENTER_PASSWORD": "إعادة إدخال كلمة المرور",
+      "PASSWORD_MISMATCH": "كلمات المرور لا تتطابق.",
+      "PASSWORD_RE_ENTER_GUIDE": "أدخل كلمة المرور مرة أخرى.",
+      "DATE_OF_BIRTH": "تاريخ الميلاد",
+      "YEAR": "السنة",
+      "MONTH": "الشهر",
+      "DAY": "اليوم",
+      "PRIVACY_POLICY": "أقر وأوافق على سياسة خصوصية ASUS",
+      "ACCEPT_POLICY_REQUIRED": "يجب عليك قبول سياسة الخصوصية للمتابعة.",
+      "SIGN_UP": "سجل"
+    }, 
+    "userDash":
+    {
+      "account": "الحساب",
+      "welcome": "مرحباً",
+      "accountSettings": "إعدادات الحساب",
+      "changePassword": "تغيير كلمة المرور",
+      "orderStatus": "حالة الطلب",
+      "wishlist": "قائمة المفضلة",
+      "contacts": "اتصل بنا",
+      "myOrders": "طلباتي",
+      "myProfile": "ملفي الشخصي",
+      "changeLanguage": "تغيير اللغة",
+      "accountSettingsdescription": "إعدادات الحساب",
+      "changePassworddescription": "تغيير كلمة المرور"
+    },
+
+    "changePasswordForm": {
+      "labels": {
+        "oldPassword": "كلمة المرور القديمة",
+        "newPassword": "كلمة المرور الجديدة",
+        "confirmPassword": "تأكيد كلمة المرور"
+      },
+      "placeholders": {
+        "oldPassword": "أدخل كلمة المرور القديمة",
+        "newPassword": "أدخل كلمة المرور الجديدة",
+        "confirmPassword": "تأكيد كلمة المرور الجديدة"
+      },
+      "errors": {
+        "oldPasswordRequired": "كلمة المرور القديمة مطلوبة.",
+        "newPasswordRequired": "كلمة المرور الجديدة مطلوبة.",
+        "newPasswordMinLength": "يجب أن تتكون كلمة المرور الجديدة من 6 أحرف على الأقل.",
+        "newPasswordStrength": "يجب أن تحتوي كلمة المرور الجديدة على حرف كبير واحد على الأقل وحرف خاص.",
+        "confirmPasswordRequired": "تأكيد كلمة المرور مطلوب.",
+        "passwordMismatch": "يجب أن تطابق كلمة المرور الجديدة كلمة التأكيد."
+      },
+      "buttons": {
+        "save": "حفظ"
+      }
+    },
+    "profile": {
+    "title": "الملف الشخصي",
+    "firstName": "الاسم الأول",
+    "firstNamePlaceholder": "أدخل اسمك الأول",
+    "lastName": "الاسم الأخير",
+    "lastNamePlaceholder": "أدخل اسمك الأخير",
+    "nickName": "اسم الشهرة",
+    "nickNamePlaceholder": "أدخل اسم الشهرة",
+    "gender": "الجنس",
+    "genderMale": "ذكر",
+    "genderFemale": "أنثى",
+    "address": "العنوان",
+    "addressPlaceholder": "أدخل عنوانك",
+    "city": "المدينة",
+    "dateOfBirth": "تاريخ الميلاد",
+    "dobYear": "السنة",
+    "dobMonth": "الشهر",
+    "dobDay": "اليوم",
+    "submit": "إرسال"
+  },
+  "orders": {
+    "title": "حالة الطلب",
+    "orderNumber": "رقم الطلب",
+    "date": "التاريخ",
+    "shippingTo": "شحن إلى",
+    "totalAmount": "المبلغ الإجمالي",
+    "state": "الحالة",
+    "details": "التفاصيل",
+    "viewDetails": "عرض التفاصيل",
+    "backToOrders": "العودة إلى الطلبات",
+    "productImage": "صورة المنتج",
+    "productName": "اسم المنتج",
+    "quantity": "الكمية",
+    "price": "السعر",
+    "total": "الإجمالي",
+    "productNotFound": "المنتج غير موجود",
+    "totalShippingCost": "إجمالي تكلفة الشحن",
+    "subTotal": "المجموع الفرعي",
+    "orderInformation": "معلومات الطلب",
+    "shippingAddress": "عنوان الشحن",
+    "shippingMethod": "طريقة الشحن",
+    "paymentMethod": "طريقة الدفع",
+    "trackingNumber": "رقم التتبع",
+    "BigTotal": "المجموع الاجمالي"
+  },
+  "contacts": {
+    "title": "دفتر العناوين",
+    "description": "قم بإدارة جهات الاتصال هنا."
+  },
+
+  "checkout": {
+    "step1": "١. اختر طريقة الشحن",
+    "shipping_address": "عنوان الشحن الخاص بك",
+    "shipping_address_details":"تفاصيل عنوان الشحن الخاصه بك",
+    "sum":"المختصر",
+
+
+    "form": {
+      "first_name": "الاسم الأول",
+      "last_name": "الاسم الأخير",
+      "address": "العنوان",
+      "governance": "المحافظة",
+      "city": "المدينة/البلدة",
+      "phone": "رقم الهاتف",
+      "shipping_method": "طريقة الشحن",
+      "select_shipping_method":"اختر طريقه الشحن"
+
+    },
+    "errors": {
+      "first_name_required": "الاسم الأول مطلوب.",
+      "last_name_required": "الاسم الأخير مطلوب.",
+      "address_required": "العنوان مطلوب.",
+      "governance_required": "المحافظة مطلوبة.",
+      "city_required": "المدينة مطلوبة.",
+      "phone_required": "رقم الهاتف مطلوب.",
+      "invalid_phone": "رقم الهاتف غير صالح.",
+      "shipping_method_required": "طريقة الشحن مطلوبة."
+    },
+    "buttons": {
+      "continue": "استمر",
+      "loading": "جار التحميل...",
+      "place_order": "إتمام الطلب"
+    },
+    "summary": {
+      "cart_subtotal": "إجمالي السلة:  ج.م",
+      "shipping_cost": "تكلفة الشحن:  ج.م",
+      "order_total": "إجمالي الطلب: ج.م"
+    },
+    "out_of_stock_alert": {
+      "title": "بعض العناصر غير متوفرة في المخزون أو الكمية المطلوبة تتجاوز المتاح:",
+      "adjust_quantity": "يرجى تعديل كمية هذه العناصر في سلة التسوق."
+    },
+    "cart": {
+      "items_in_cart": "عناصر في السلة ",
+      "product_name": "اسم المنتج",
+      "remove_from_cart": "إزالة من السلة",
+      "product_price": "السعر",
+      "product_quantity": "الكمية",
+      "product_subtotal": "الإجمالي الفرعي"
+    }
+  },
+  "Search":"بحث" ,
+  "filters":
+  {
+    "sortAndFilter": "الترتيب والتصفية",
+    "clearAll": "مسح الكل",
+    "selectedValues": "القيم المحددة",
+    "remove": "x",
+    "expandAll": "عرض الكل",
+    "collapseAll": "عرض المزيد",
+    "section": "القسم"
+  },
+  
+  "Learn More":"معرفه المزيد",
+  "buy":"شراء",
+  "disclaimer": "قد لا يشير هذا السعر إلى المواصفات أدناه.",
+  "freeShippingTitle": "الشحن المجاني",
+  "freeShippingDescription": "الشحن المجاني على جميع الطلبات",
+  "securePaymentTitle": "دفع آمن ومضمون",
+  "securePaymentDescription": "مشفر بواسطة Payment لأمان الدفع الخاص بك",
+  "techSpecs": "المواصفات التقنية",
+  "noSpecs": "لا توجد مواصفات متاحة لهذا المنتج.",
+  "overview": "نظرة عامة",
+  "delivery": "التوصيل",
+  "deliveryDetails": "توصيل مجاني / 2-3 أيام عمل",
+  "vatIncluded": "جميع الأسعار تشمل ضريبة القيمة المضافة",
+  "addToCart": "أضف إلى السلة",
+  "Show More":"معرفه المزيد",
+  "remove":"ازاله" ,
+  "Payment":"الدفع" ,
+  "Close":"اغلاق",
+  "hotDeals": "العروض المهمة",
+  "SeeAll":"رؤيه الكل" ,
+  "campaigns": "الحملات"
+
+
+
+
+      
+  
+}
