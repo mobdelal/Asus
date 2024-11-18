@@ -261,10 +261,9 @@ export class UserDashboardComponent implements OnInit {
                 this.LoggedUser = updatedUserData;
                 this.successMessage = "User data updated successfully!";
                 this.errorMessage = "";
-
-                this.router.navigateByUrl('/sign-up/profile', { skipLocationChange: true }).then(() => {
-                  this.router.navigate([this.router.url]);
-                });
+              this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+                this.router.navigate([this.router.url]);
+              });
               },
               error: () => {
                 this.errorMessage = "Error updating user details.";
