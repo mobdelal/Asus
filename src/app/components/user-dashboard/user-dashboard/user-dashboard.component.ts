@@ -261,6 +261,8 @@ export class UserDashboardComponent implements OnInit {
                 this.LoggedUser = updatedUserData;
                 this.successMessage = "User data updated successfully!";
                 this.errorMessage = "";
+                window.location.reload();
+
               },
               error: () => {
                 this.errorMessage = "Error updating user details.";
