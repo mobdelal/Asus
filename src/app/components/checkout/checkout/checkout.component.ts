@@ -370,8 +370,10 @@ orderId?: number | null ;
             console.error('Order ID is missing.');
           }
           setTimeout(() => {
-            this.router.navigate(['/home']); 
-          }, 1300); 
+            this.router.navigateByUrl('/home', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['/home']);
+            });
+          }, 1300);
           // setTimeout(() => {
           //   this.router.navigate(['/home'], { replaceUrl: true }).then(() => {
           //     location.reload(); 
