@@ -145,23 +145,15 @@ p {
 }
 .p-Dis{
   font-size: 1.25rem !important;
-
-}@media (max-width: 576px) { /* Target small screens */
-  .row {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
-  }
-
-  /* Ensure thumbnails in col-2 are side by side */
+}
+/* For small screens (max-width: 576px) */
+@media (max-width: 576px) {
   .col-2 {
     display: flex;
-    flex-direction: row; /* Set thumbnails to be side by side */
-    flex-wrap: wrap; /* Allow thumbnails to wrap to the next line if needed */
-    justify-content: center; /* Center the thumbnails */
+    flex-direction: row; /* Display thumbnails side by side */
     gap: 10px; /* Add spacing between thumbnails */
-    order: 2; /* Move thumbnails below the main image */
-    width: 100%; /* Ensure the container takes full width */
-    margin-top: 1rem;
+    justify-content: center; /* Center the thumbnails */
+    margin-top: 1rem; /* Space above thumbnails */
   }
 
   .thumbnail-img {
@@ -170,37 +162,22 @@ p {
     object-fit: cover; /* Ensure images maintain proportions */
     cursor: pointer; /* Make the thumbnails clickable */
   }
-
-  .col-5 {
-    order: 1; /* Ensure the main image stays on top */
-    width: 100%; /* Make the main image container full width */
-    text-align: center;
-  }
-
-  .main-image-container {
-    width: 100%; /* Ensure the main image container takes full width */
-    max-width: 100%; /* Avoid extra margin */
-    margin: 0 auto; /* Center the main image */
-  }
-
-  .main-image {
-    width: 100%; /* Ensure the main image takes full width */
-    height: auto; /* Maintain aspect ratio */
-  }
 }
 
-@media (min-width: 577px) { /* Default for larger screens */
-  .row {
-    flex-direction: row; /* Keep items side by side on larger screens */
-  }
-
+/* For larger screens (min-width: 577px) */
+@media (min-width: 577px) {
   .col-2 {
     display: flex;
-    flex-direction: column; /* Keep thumbnails stacked vertically on large screens */
+    flex-direction: column; /* Stack thumbnails vertically */
+    gap: 10px; /* Add spacing between thumbnails */
     align-items: center; /* Center the thumbnails */
   }
 
-  .col-5 {
-    width: auto; /* Make the main image container fit the content */
+  .thumbnail-img {
+    width: 80px; /* Adjust thumbnail size */
+    height: 80px; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure images maintain proportions */
+    cursor: pointer; /* Make the thumbnails clickable */
   }
 }
+
