@@ -103,7 +103,7 @@
           </span>
         </p>
         
-        <p *ngIf="!product.priceAfterDiscount" class="price">
+        <p *ngIf="product.priceAfterDiscount == product.price" class="price">
           {{ product.price | number:'1.2-2' }} EGP
         </p>
         
