@@ -50,11 +50,4 @@
     .disclaimer{
       font-size: 12px;
     }
-    html[lang='ar'] {
-      direction: rtl;
-    }
-    
-    html[lang='ar'] .row {
-      direction: rtl;
-    }
-    
+  
