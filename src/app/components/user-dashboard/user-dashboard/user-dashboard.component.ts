@@ -263,7 +263,7 @@ export class UserDashboardComponent implements OnInit {
                 this.errorMessage = "";
 
                 this.router.navigateByUrl('/sign-up/profile', { skipLocationChange: true }).then(() => {
-                  this.router.navigate([this.router.url]);
+                  window.location.reload();
                 });
               },
               error: () => {
