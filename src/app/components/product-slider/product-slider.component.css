@@ -4,6 +4,8 @@
   align-items: center;      /* محاذاة العناصر عمودياً في المنتصف */
   gap: 10px;                /* مسافة بين الـ div و الـ button */
   /* padding-left: 10px; */
+  position: relative; /* Ensure buttons and cards adjust accordingly */
+
   
 }
 
@@ -20,6 +22,8 @@
   min-height: 800px;
   max-height: auto;
   transition: all 0.3s ease; 
+  flex-grow: 1; /* Allow the product-cards section to grow and take up available space */
+  position: relative;
 }
 .price-after-discount {
   color: rgb(199, 66, 0);  
@@ -136,6 +140,9 @@ button:hover {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  position: absolute;
+  top: 10px;  /* Position buttons near the top of the cards */
+  z-index: 2;
 }
 
 .prev-button:hover, .next-button:hover {
