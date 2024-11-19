@@ -16,7 +16,7 @@
     overflow-x: auto; /* Allow horizontal scroll */
     scroll-behavior: smooth;
     width: 100%;
-    padding: 0 15px; /* Add padding for left/right margin */
+    padding: 0 0px; /* Add padding for left/right margin */
   }
   
   /* Hide the default scrollbar */
