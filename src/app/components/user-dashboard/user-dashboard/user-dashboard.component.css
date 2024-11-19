@@ -263,24 +263,44 @@ text-decoration: underline; /* ظهور خط تحت النص عند التمري
 /* For smaller screens */
 @media (max-width: 768px) {
 
-
+  /* Stack table rows vertically */
   .table tbody tr {
-    display: block; /* Display each row as a block */
-    margin-bottom: 1rem; /* Add spacing between rows */
+    display: block; /* Make each row a block element */
+    margin-bottom: 1rem; /* Add space between rows */
+    width: 100%; /* Ensure rows take up full width */
   }
 
+  /* Adjust table cells to be displayed in a flexible layout */
   .table tbody td {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ddd; /* Add a border for better readability */
+    border-bottom: 1px solid #ddd; /* Add border for readability */
     padding: 0.5rem 0; /* Adjust padding */
+    width: 100%; /* Ensure cells take up full width */
   }
 
+  /* Use the data-label for headers to show them before the values */
   .table tbody td::before {
-    content: attr(data-label); /* Use data-label attribute for headers */
+    content: attr(data-label); /* Show header text from data-label attribute */
     font-weight: bold;
-    margin-right: 0.5rem; /* Add spacing between label and value */
-    text-transform: capitalize; /* Make labels more readable */
+    margin-right: 0.5rem; /* Space between label and value */
+    text-transform: capitalize; /* Capitalize the labels */
+  }
+
+  /* Make sure the table headers are aligned correctly */
+  .table thead {
+    display: none; /* Hide original table header */
+  }
+
+  /* If you want to show the headers differently on small screens, consider adding custom labels */
+  .table tbody td:first-child {
+    font-weight: bold; /* Optional: Highlight the first column */
+  }
+
+  /* Add a scrollable container for the table if needed */
+  .table-responsive {
+    overflow-x: auto; /* Add horizontal scrolling for small screens */
+    -webkit-overflow-scrolling: touch; /* Ensure smooth scrolling on mobile */
   }
 }
