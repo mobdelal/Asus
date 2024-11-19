@@ -4,6 +4,7 @@
   align-items: center;      /* محاذاة العناصر عمودياً في المنتصف */
   gap: 10px;                /* مسافة بين الـ div و الـ button */
   /* padding-left: 10px; */
+  padding-right: 0;
   
 }
 
@@ -20,6 +21,7 @@
   min-height: 800px;
   max-height: auto;
   transition: all 0.3s ease; 
+
 }
 .price-after-discount {
   color: rgb(199, 66, 0);  
@@ -129,7 +131,7 @@ button:hover {
 
 /* Styling the buttons */
 .prev-button, .next-button {
-  background-color: #007bff;
+  background-color: #bdc2c7;
   color: white;
   border: none;
   padding: 0.5rem 0.5rem;
@@ -168,7 +170,7 @@ button:hover {
 }
 .container{
   margin-left: 0px;
-  margin-right: 0;
+  margin-right: 0px;
 
 }
 
