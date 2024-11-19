@@ -56,10 +56,10 @@
     position: relative !important;
 }
 
-body, html {
+/* body, html {
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
+  overflow-x: hidden; 
+} */
 
 .scroll-top-btn {
   position: fixed; /* Keep it fixed relative to the viewport */
