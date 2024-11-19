@@ -272,8 +272,10 @@
       
       },
       "contacts": {
-        "title": "Rolodex",
-        "description": "Manage your contacts here."
+        "title": "Contacts",
+        "description": "Manage your contacts here.",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف"
       },
 
         "checkout": {

@@ -277,7 +277,9 @@
   },
   "contacts": {
     "title": "دفتر العناوين",
-    "description": "قم بإدارة جهات الاتصال هنا."
+    "description": "قم بإدارة جهات الاتصال هنا.",
+    "email": "Email",
+    "phone": "Phone"
   },
 
   "checkout": {
