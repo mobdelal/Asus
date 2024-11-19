@@ -266,8 +266,10 @@ orderId?: number | null ;
             Products: this.cartItems.map(item => ({
                 ProductId: item.product.id,
                 Quantity: item.quantity,
-                Price: item.product.price
-            })),
+                Price: item.product.priceAfterDiscount && item.product.priceAfterDiscount < item.product.price
+                ? item.product.priceAfterDiscount
+                : item.product.price
+        })),
             ShippingMethodId: shippingMethodId,
             TotalAmount: this.orderTotal,
             PhoneNumber: phone,
