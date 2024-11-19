@@ -1,7 +1,4 @@
-
-
-
-<div class="image-grid">
+<div class="image-grid mt-3">
   <!-- <div class="image-card" (click)="openProductDetails(item.id)"  *ngFor="let item of sliderImages">
     <img
         [src]="'http://localhost:5027' + item.image_url"
@@ -10,15 +7,12 @@
       />
   </div> -->
 
-  
-  <div class="image-card"  *ngFor="let item of categoriesWithImages">
+  <div class="image-card" *ngFor="let item of categoriesWithImages">
     <img
-    [src]="'https://asus-dashboard.runasp.net' + item.imageUrl"
-    class="card-img-top"
-    alt="{{ item.name_EN }}"
-    (click)="openCategory(item.id)"
-  />
-   
+      [src]="'https://asus-dashboard.runasp.net' + item.imageUrl"
+      class="card-img-top"
+      alt="{{ item.name_EN }}"
+      (click)="openCategory(item.id)"
+    />
   </div>
 </div>
-
