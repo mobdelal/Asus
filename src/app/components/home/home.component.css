@@ -2,14 +2,10 @@
 
 /* Container for the product slider */
 .product-slider {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     position: relative;
     overflow: hidden; /* Hide the scrollbars */
-    margin: 0; /* Ensure no extra margin */
-    padding: 0;
-    width: 100%;
-
   }
   
   /* The container that holds all product cards in a horizontal line */
@@ -20,7 +16,7 @@
     overflow-x: auto; /* Allow horizontal scroll */
     scroll-behavior: smooth;
     width: 100%;
-    padding: 0 0px; /* Add padding for left/right margin */
+    padding: 0 px; /* Add padding for left/right margin */
   }
   
   /* Hide the default scrollbar */
