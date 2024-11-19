@@ -6,6 +6,10 @@
     align-items: center;
     position: relative;
     overflow: hidden; /* Hide the scrollbars */
+    margin: 0; /* Ensure no extra margin */
+    padding: 0;
+    width: 100%;
+
   }
   
   /* The container that holds all product cards in a horizontal line */
