@@ -1,7 +1,7 @@
 <div class="container mt-5" *ngIf="product">
   <!-- First Navbar (Sticky at the top) -->
   <div class="navbar first-navbar">
-    <h5>{{ product.name_EN }}</h5>
+    <h5>{{ lang === 'en' ? product.name_EN : product.name }}</h5>
     <span>{{ "overview" | translate }}</span>
   </div>
 
@@ -33,6 +33,7 @@
   
       <!-- Product Details Section -->
       <div class="col-md-5 ps-md-5 mt-4 mt-md-0">
+        <p> {{product.description_EN}}</p>
         <!-- Left-Aligned Icons -->
       </div>
     </div>

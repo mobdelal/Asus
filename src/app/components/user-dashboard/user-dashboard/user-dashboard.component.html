@@ -399,7 +399,7 @@
                 />
               </td>
               <td *ngIf="productDetails[item.id]">
-                {{ productDetails[item.id].name_EN }}
+                {{ lang === 'en' ? productDetails[item.id].name_EN : productDetails[item.id].name }}
               </td>
               <td *ngIf="!productDetails[item.id]">
                 {{ "orders.productNotFound" | translate }}

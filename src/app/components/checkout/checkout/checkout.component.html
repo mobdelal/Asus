@@ -351,7 +351,7 @@
       </h3>
 
       <div *ngFor="let item of cartItems; let i = index" class="cart-item">
-        <p class="product-name">{{ item.product.name }}</p>
+        {{ lang === 'en' ? item.product.name_EN : item.product.name }}
         <!-- <button (click)="removeFromCart(i)" class="btn-close rm-btn"></button> -->
 
         <div class="d-flex justify-content-between align-items-center">

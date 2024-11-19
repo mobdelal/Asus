@@ -94,7 +94,7 @@ export class ProductSliderComponent implements OnInit {
 
 
   toggleSpecsForAll(): void {
-    this.showAllSpecs = !this.showAllSpecs; // تغيير حالة العرض لجميع المنتجات
+    this.showAllSpecs = !this.showAllSpecs; 
     this.products.forEach(product => {
       product.showFullSpecs = this.showAllSpecs;
     });
