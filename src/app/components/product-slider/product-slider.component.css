@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;  /* محاذاة العناصر أفقياً في المنتصف */
   align-items: center;      /* محاذاة العناصر عمودياً في المنتصف */
-  gap: 10px;                /* مسافة بين الـ div و الـ button */
+  gap: 5px;                /* مسافة بين الـ div و الـ button */
   /* padding-left: 10px; */
-  padding-right: 0;
+  
   
 }
 
