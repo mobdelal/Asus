@@ -146,8 +146,7 @@ p {
 .p-Dis{
   font-size: 1.25rem !important;
 
-}
-@media (max-width: 576px) { /* Target small screens */
+}@media (max-width: 576px) { /* Target small screens */
   .row {
     flex-direction: column; /* Stack items vertically */
     align-items: center;
@@ -156,10 +155,12 @@ p {
   .col-2 {
     order: 2; /* Move thumbnails below */
     display: flex;
-    flex-wrap: wrap; /* Ensure thumbnails wrap if they exceed screen width */
-    justify-content: center; /* Center thumbnails */
+    flex-direction: row; /* Change to row for side-by-side layout */
+    flex-wrap: wrap; /* Allow thumbnails to wrap to the next line if needed */
+    justify-content: center; /* Center the thumbnails */
     gap: 10px; /* Add spacing between thumbnails */
     margin-top: 1rem;
+    width: 100%; /* Ensure the container takes full width */
   }
 
   .col-5 {
@@ -186,4 +187,18 @@ p {
   }
 }
 
+@media (min-width: 577px) { /* Default for larger screens */
+  .row {
+    flex-direction: row; /* Keep items side by side on large screens */
+  }
 
+  .col-2 {
+    display: flex;
+    flex-direction: column; /* Keep thumbnails stacked vertically on large screens */
+    align-items: center; /* Center the thumbnails */
+  }
+
+  .col-5 {
+    width: auto; /* Make the main image container fit the content */
+  }
+}
