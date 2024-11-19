@@ -122,8 +122,8 @@ orderId?: number | null ;
     this.checkoutForm.patchValue({
       firstName: user.firstName,
       lastName: user.lastName,
-      governance: user.city,
-      city: user.region,
+      address: user.region,
+      city: user.city,
     });
   }
   onShippingMethodChange(name: string): void {
