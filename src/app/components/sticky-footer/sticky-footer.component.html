@@ -15,9 +15,9 @@
       <h4 class="mb-0">
         EGP
         {{
-          product.priceAfterDiscount
-            ? (product.priceAfterDiscount | number : "1.2-2")
-            : (product.price | number : "1.2-2")
+          product.priceAfterDiscount && product.priceAfterDiscount < product.price
+            ? (product.priceAfterDiscount | number: "1.2-2")
+            : (product.price | number: "1.2-2")
         }}
       </h4>
       <small>{{ "vatIncluded" | translate }}</small>

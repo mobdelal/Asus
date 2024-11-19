@@ -88,8 +88,10 @@
             ></rect>
           </svg>
         </p>
-        <p *ngIf="product.priceAfterDiscount" class="price-discounted">
-          <span class="price-after-discount">
+        <p 
+        *ngIf="product.priceAfterDiscount && product.priceAfterDiscount < product.price" 
+        class="price-discounted"
+      >          <span class="price-after-discount">
             {{ product.priceAfterDiscount | number:'1.2-2' }} EGP
           </span>
           <br>

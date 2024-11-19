@@ -363,17 +363,26 @@
             class="product-image"
           />
           <p class="product-price">
-            {{ item.product.price | number : "1.2-2" }} EGP
+            {{
+              item.product.priceAfterDiscount && item.product.priceAfterDiscount < item.product.price
+                ? (item.product.priceAfterDiscount | number: "1.2-2")
+                : (item.product.price | number: "1.2-2")
+            }} EGP
           </p>
-        </div>
-        <p class="product-quantity">
-          {{ "checkout.cart.product_quantity" | translate }} :
-          {{ item.quantity }}
-        </p>
-        <p class="product-subtotal">
-          {{ "checkout.cart.product_subtotal" | translate }}:
-          {{ item.product.price * item.quantity | number : "1.2-2" }} EGP
-        </p>
+          <p class="product-quantity">
+            {{ "checkout.cart.product_quantity" | translate }} :
+            {{ item.quantity }}
+          </p>
+          <p class="product-subtotal">
+            {{ "checkout.cart.product_subtotal" | translate }}:
+            {{
+              (item.product.priceAfterDiscount && item.product.priceAfterDiscount < item.product.price
+                ? item.product.priceAfterDiscount
+                : item.product.price) * item.quantity
+              | number: "1.2-2"
+            }} EGP
+          </p>
+          
       </div>
     </div>
   </div>
