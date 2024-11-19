@@ -215,9 +215,14 @@ orderId?: number | null ;
 
   calculateCartSubtotal(): void {
     this.cartSubtotal = this.cartItems.reduce((total, item) => {
-      return total + item.product.price * item.quantity;
+      const effectivePrice = 
+        item.product.priceAfterDiscount && item.product.priceAfterDiscount < item.product.price
+          ? item.product.priceAfterDiscount
+          : item.product.price;
+      return total + effectivePrice * item.quantity;
     }, 0);
   }
+  
 
   calculateOrderTotal(): void {
     this.orderTotal = this.cartSubtotal + this.shippingCost;
