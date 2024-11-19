@@ -147,4 +147,41 @@ p {
   font-size: 1.25rem !important;
 
 }
+@media (max-width: 576px) { /* Target small screens */
+  .row {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .col-2 {
+    order: 2; /* Move thumbnails below */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .col-5 {
+    order: 1; /* Ensure the main image stays on top */
+    text-align: center;
+  }
+
+  .thumbnail-img {
+    width: 60px; /* Adjust thumbnail size for small screens */
+    height: 60px; /* Maintain aspect ratio */
+    margin: 5px; /* Add spacing between thumbnails */
+  }
+
+  .main-image-container {
+    width: 100%; /* Make the main image container full-width */
+    max-width: 300px; /* Limit the maximum size */
+    margin: 0 auto; /* Center the main image */
+  }
+
+  .main-image {
+    width: 100%; /* Ensure the main image scales with the container */
+    height: auto;
+  }
+}
+
 
