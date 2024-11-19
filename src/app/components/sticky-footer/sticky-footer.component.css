@@ -17,3 +17,24 @@
 .heart-btn .bi-heart-fill.active {
   color: #007bff; 
 }
+@media (max-width: 576px) { /* Target small screens */
+  .navbar .fw-bold {
+    font-size: 0.9rem; /* Adjust font size for bold text */
+  }
+
+  .navbar small {
+    font-size: 0.75rem; /* Adjust font size for smaller text */
+  }
+
+  .navbar h4 {
+    font-size: 1rem; /* Adjust the size of the price */
+  }
+
+  .btn {
+    font-size: 0.9rem; /* Adjust button text size */
+  }
+
+  .heart-btn i {
+    font-size: 1rem; /* Adjust heart icon size */
+  }
+}
