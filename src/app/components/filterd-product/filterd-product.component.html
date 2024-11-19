@@ -1,34 +1,36 @@
-<div class="row" style="background-color: #f5f5f5">
-  <!-- Sidebar Filter: Will be on the right for Arabic and left for other languages -->
-  <div
-    class="col-12 col-md-4 mt-5"
-    [ngClass]="lang === 'ar' ? 'order-md-2' : 'order-md-1'"
-  >
-    <app-sid-bar-filter
-      [categoryId]="categoryId"
-      (filteredProducts)="onFilteredProducts($event)"
-    ></app-sid-bar-filter>
-  </div>
+<div class="container">
+  <div class="row" style="background-color: #f5f5f5">
+    <!-- Sidebar Filter: Will be on the right for Arabic and left for other languages -->
+    <div
+      class="col-12 col-md-4 mt-5"
+      [ngClass]="lang === 'ar' ? 'order-md-2' : 'order-md-1'"
+    >
+      <app-sid-bar-filter
+        [categoryId]="categoryId"
+        (filteredProducts)="onFilteredProducts($event)"
+      ></app-sid-bar-filter>
+    </div>
 
-  <!-- Product List: Will be on the left for Arabic and right for other languages -->
-  <div
-    class="col-12 col-md-8 mt-5"
-    [ngClass]="lang === 'ar' ? 'order-md-1' : 'order-md-2'"
-  >
-    <ng-container *ngIf="products && products.length > 0; else noProducts">
-      <app-product-card [products]="products"></app-product-card>
-    </ng-container>
-    <ng-template #noProducts>
-      <p
-        class="text-center mt-4"
-        [ngStyle]="{
-          'font-size': '24px',
-          'font-weight': 'bold',
-          color: 'gray'
-        }"
-      >
-        {{ lang === "ar" ? "لا يوجد منتجات" : "No Products Found" }}
-      </p>
-    </ng-template>
+    <!-- Product List: Will be on the left for Arabic and right for other languages -->
+    <div
+      class="col-12 col-md-8 mt-5"
+      [ngClass]="lang === 'ar' ? 'order-md-1' : 'order-md-2'"
+    >
+      <ng-container *ngIf="products && products.length > 0; else noProducts">
+        <app-product-card [products]="products"></app-product-card>
+      </ng-container>
+      <ng-template #noProducts>
+        <p
+          class="text-center mt-4"
+          [ngStyle]="{
+            'font-size': '24px',
+            'font-weight': 'bold',
+            color: 'gray'
+          }"
+        >
+          {{ lang === 'ar' ? 'لا يوجد منتجات' : 'No Products Found' }}
+        </p>
+      </ng-template>
+    </div>
   </div>
 </div>
