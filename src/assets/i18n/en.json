@@ -274,8 +274,8 @@
       "contacts": {
         "title": "Contacts",
         "description": "Manage your contacts here.",
-        "email": "البريد الإلكتروني",
-        "phone": "رقم الهاتف"
+        "email": "Email",
+        "phone": "Phone"
       },
 
         "checkout": {

@@ -278,8 +278,8 @@
   "contacts": {
     "title": "دفتر العناوين",
     "description": "قم بإدارة جهات الاتصال هنا.",
-    "email": "Email",
-    "phone": "Phone"
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف"
   },
 
   "checkout": {
