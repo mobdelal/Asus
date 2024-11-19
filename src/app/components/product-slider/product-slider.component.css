@@ -3,7 +3,7 @@
   justify-content: center;  /* محاذاة العناصر أفقياً في المنتصف */
   align-items: center;      /* محاذاة العناصر عمودياً في المنتصف */
   gap: 10px;                /* مسافة بين الـ div و الـ button */
-  padding-left: 10px;
+  /* padding-left: 10px; */
   
 }
 
