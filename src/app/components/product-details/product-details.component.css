@@ -156,31 +156,33 @@ p {
   .col-2 {
     order: 2; /* Move thumbnails below */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: wrap; /* Ensure thumbnails wrap if they exceed screen width */
+    justify-content: center; /* Center thumbnails */
+    gap: 10px; /* Add spacing between thumbnails */
     margin-top: 1rem;
   }
 
   .col-5 {
     order: 1; /* Ensure the main image stays on top */
     text-align: center;
+    width: 100%; /* Make the main image container full width */
   }
 
   .thumbnail-img {
-    width: 60px; /* Adjust thumbnail size for small screens */
+    width: 60px; /* Adjust thumbnail size */
     height: 60px; /* Maintain aspect ratio */
-    margin: 5px; /* Add spacing between thumbnails */
+    object-fit: cover; /* Ensure images maintain proportions */
   }
 
   .main-image-container {
-    width: 100%; /* Make the main image container full-width */
-    max-width: 300px; /* Limit the maximum size */
+    width: 100%; /* Make the main image container full width */
+    max-width: 100%; /* Ensure no extra margin */
     margin: 0 auto; /* Center the main image */
   }
 
   .main-image {
-    width: 100%; /* Ensure the main image scales with the container */
-    height: auto;
+    width: 100%; /* Ensure the main image takes full width */
+    height: auto; /* Maintain aspect ratio */
   }
 }
 
