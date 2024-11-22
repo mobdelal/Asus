@@ -67,6 +67,8 @@ orderId?: number | null ;
 
 
   ngOnInit(): void {
+    console.log("edits============");
+    
 
     const modalElement = document.getElementById('exampleModal');
     if (modalElement) {
